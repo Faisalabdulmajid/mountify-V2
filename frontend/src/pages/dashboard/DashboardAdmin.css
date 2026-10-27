@@ -1,0 +1,605 @@
+/* ================================================================== */
+/* KODE LENGKAP UNTUK DashboardAdmin.css - VERSI PERBAIKAN FINAL */
+/* ================================================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+/* DashboardAdmin.css - VERSI BARU YANG SUDAH DIBERSIHKAN */
+.dashboard-admin-page-content {
+  flex-grow: 1;
+  background-color: #f4f7f6;
+  font-family: "Inter", sans-serif;
+  padding-bottom: 40px;
+  /* Properti margin-left sudah dipindahkan ke AdminLayout.css */
+}
+
+.dashboard-admin-container {
+  /* PERBAIKAN 2: Membuat konten mengisi seluruh lebar yang tersedia */
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+/* HEADER */
+.dashboard-header {
+  margin-bottom: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.dashboard-header h1 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1a202c;
+}
+.welcome-message {
+  margin-top: 4px;
+  font-size: 1rem;
+  color: #4a5568;
+}
+
+.header-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.btn-view-site {
+  padding: 10px 18px;
+  background: linear-gradient(135deg, #4299e1, #3182ce);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.btn-view-site:hover {
+  background: linear-gradient(135deg, #3182ce, #2c5282);
+  transform: translateY(-2px);
+  text-decoration: none;
+  color: white;
+}
+
+.btn-logout {
+  padding: 10px 18px;
+  background-color: #e53e3e;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+.btn-logout:hover {
+  background-color: #c53030;
+  transform: translateY(-2px);
+}
+
+/* KARTU STATISTIK */
+.stats-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px;
+  margin-bottom: 32px;
+}
+.stat-card {
+  background-color: #ffffff;
+  padding: 24px;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+.stat-icon {
+  font-size: 1.75rem;
+  color: #27ae60;
+  background-color: #e9f7ef;
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.stat-info {
+  display: flex;
+  flex-direction: column;
+}
+.stat-value {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #1a202c;
+  line-height: 1.1;
+}
+.stat-label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #718096;
+}
+.stat-card.urgent .stat-icon {
+  background-color: #fee2e2;
+  color: #ef4444;
+}
+.stat-card.warning .stat-icon {
+  background-color: #fef3c7;
+  color: #f59e0b;
+}
+
+/* MAIN SECTION (GRID UNTUK WIDGET) */
+.dashboard-main-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-bottom: 40px;
+}
+.widget-card {
+  background-color: #ffffff;
+  padding: 24px;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02), 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+.widget-card h3 {
+  margin-top: 0;
+  margin-bottom: 24px;
+  font-size: 1.25rem;
+  color: #1a202c;
+  font-weight: 600;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 12px;
+}
+.chart-container {
+  width: 100%;
+  height: 300px;
+}
+.full-width-widget {
+  grid-column: 1 / -1;
+}
+
+/* ACTIVITY LIST */
+.activity-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-height: 300px;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+.activity-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.activity-icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f1f5f9;
+  color: #64748b;
+  font-size: 1.2rem;
+}
+.activity-details {
+  display: flex;
+  flex-direction: column;
+}
+.activity-title {
+  font-weight: 500;
+  color: #334155;
+  font-size: 0.9rem;
+}
+.activity-subtext {
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
+/* QUICK ACTIONS */
+.quick-actions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+.quick-action-button {
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  color: #334155;
+  padding: 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+.quick-action-button:hover {
+  background-color: #e9f7ef;
+  border-color: #27ae60;
+  color: #27ae60;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+.quick-action-button i {
+  font-size: 1.8rem;
+}
+
+/* MENU MANAJEMEN */
+.management-menu-section .section-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+.management-menu-section h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1a202c;
+  margin-bottom: 4px;
+}
+.management-menu-section p {
+  font-size: 1rem;
+  color: #4a5568;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.dashboard-menu {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+.menu-card {
+  background-color: #ffffff;
+  padding: 24px;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  color: inherit;
+}
+.menu-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.07),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  border-color: #27ae60;
+}
+.menu-icon {
+  font-size: 2rem;
+  color: #27ae60;
+  margin-bottom: 16px;
+  width: 48px;
+  height: 48px;
+  background-color: #e9f7ef;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.menu-card h3 {
+  font-size: 1.1rem;
+  color: #1a202c;
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+.menu-card p {
+  font-size: 0.9rem;
+  color: #718096;
+  line-height: 1.5;
+  flex-grow: 1;
+  margin-bottom: 20px;
+}
+.menu-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: #27ae60;
+  font-weight: 600;
+  margin-top: auto;
+  transition: color 0.2s ease;
+}
+.menu-button:hover {
+  color: #219150;
+}
+
+/* UTILITIES & RESPONSIVE */
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  font-size: 1.2rem;
+  color: #4a5568;
+}
+.error-message {
+  color: #c53030;
+  padding: 16px;
+  background-color: #fed7d7;
+  border: 1px solid #f56565;
+  border-radius: 8px;
+  margin-bottom: 24px;
+}
+
+/* PENAMBAHAN: Gaya untuk grup tombol header */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Memberi jarak antar tombol */
+}
+
+.btn-view-site {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  background-color: #f8fafc; /* Warna netral */
+  color: #334155;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.btn-view-site:hover {
+  background-color: #e2e8f0;
+  color: #1a202c;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Penyesuaian untuk .dashboard-header */
+/* System Status Card */
+.system-status-card {
+  background-color: #ffffff;
+  padding: 24px;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.system-status-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+}
+
+.system-status-card h4 {
+  margin: 0 0 16px 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1a202c;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.system-status-card h4::before {
+  content: "🖥️";
+  font-size: 1rem;
+}
+
+.status-items {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.status-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #f7fafc;
+}
+
+.status-item:last-child {
+  border-bottom: none;
+}
+
+.status-label {
+  font-weight: 500;
+  color: #4a5568;
+}
+
+.status-value {
+  font-weight: 600;
+  color: #2d3748;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.status-value.online {
+  color: #38a169;
+}
+
+.status-value.offline {
+  color: #e53e3e;
+}
+
+.text-success {
+  color: #38a169 !important;
+}
+
+.text-danger {
+  color: #e53e3e !important;
+}
+
+/* Popular Content Card */
+.popular-content-card {
+  background-color: #ffffff;
+  padding: 24px;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.popular-content-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+}
+
+.popular-content-card h4 {
+  margin: 0 0 16px 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1a202c;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.popular-content-card h4::before {
+  content: "📊";
+  font-size: 1rem;
+}
+
+.popular-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.popular-section h5 {
+  margin: 0 0 12px 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2d3748;
+}
+
+.popular-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.popular-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.popular-item:hover {
+  background-color: #f7fafc;
+}
+
+.popular-rank {
+  font-weight: 700;
+  color: #718096;
+  min-width: 24px;
+  text-align: center;
+}
+
+.popular-name {
+  flex: 1;
+  font-weight: 500;
+  color: #2d3748;
+  font-size: 0.9rem;
+}
+
+.popular-count {
+  font-weight: 600;
+  color: #4a5568;
+  font-size: 0.85rem;
+}
+
+/* Quick Actions Improvements */
+.quick-action-button {
+  position: relative;
+  overflow: visible;
+}
+
+.quick-action-button.urgent {
+  border: 2px solid #fed7d7;
+  background: linear-gradient(135deg, #feb2b2, #fc8181);
+}
+
+.quick-action-button.urgent:hover {
+  background: linear-gradient(135deg, #fc8181, #f56565);
+  transform: translateY(-3px);
+}
+
+.notification-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #e53e3e;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.dashboard-header {
+  margin-bottom: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Ubah ke 'center' agar tombol sejajar */
+}
+
+@media (max-width: 992px) {
+  .dashboard-admin-page-content {
+    /* PERBAIKAN 3: Menghapus margin saat sidebar hilang di mobile */
+    margin-left: 0;
+  }
+  .dashboard-main-section {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 768px) {
+  .dashboard-header {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .stats-container {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+}

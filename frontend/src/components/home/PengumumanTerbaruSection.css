@@ -1,0 +1,115 @@
+/*
+ * File: PengumumanTerbaruSection.css
+ * Deskripsi: Berisi gaya SPESIFIK untuk section Pengumuman.
+ * Gaya dasar seperti .home-section dan .card-base diatur di HomePageSections.css
+*/
+
+/* Section ini memiliki background putih untuk variasi antar section */
+.pengumuman-terbaru-section {
+  background-color: #ffffff;
+}
+
+/* Mengatur padding di dalam konten kartu */
+.pengumuman-card-content {
+  padding: 25px;
+  flex-grow: 1; /* Memastikan konten mengisi ruang vertikal yang tersedia */
+}
+
+/* Gaya untuk judul di dalam kartu */
+.pengumuman-card-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  /* Menggunakan variabel warna agar selaras dengan tema */
+  color: var(--primary-color, #142640);
+  margin: 0 0 10px 0;
+}
+
+/* Gaya untuk tanggal */
+.pengumuman-card-date {
+  font-size: 0.85rem;
+  color: #888;
+  margin-bottom: 15px;
+  display: block;
+}
+
+/* Gaya untuk ringkasan/paragraf */
+.pengumuman-card-summary {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.6;
+  /* Memotong teks jika terlalu panjang (opsional) */
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  /* Properti standar untuk kompatibilitas */
+  line-clamp: 4;
+  box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Gaya untuk link "Selengkapnya" */
+.pengumuman-selengkapnya {
+  margin-top: auto; /* Mendorong link ini ke bagian bawah kartu */
+  padding: 0 25px 25px 25px;
+  font-weight: 600;
+  color: var(--accent-color, #f58554); /* Menggunakan warna aksen dari tema */
+  transition: color 0.2s ease;
+}
+
+/* Seluruh kartu sudah memiliki efek hover dari .card-base, jadi tidak perlu lagi */
+/* Tambahkan ini ke dalam file PengumumanTerbaruSection.css */
+
+.pengumuman-card.is-loading .placeholder-line {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading-shimmer 1.5s infinite linear;
+  border-radius: 4px;
+  height: 1em;
+  margin-bottom: 0.75em;
+}
+
+.pengumuman-card.is-loading .placeholder-line.title {
+  height: 1.3em;
+  width: 80%;
+}
+
+.pengumuman-card.is-loading .placeholder-line.date {
+  height: 0.85em;
+  width: 40%;
+}
+
+.pengumuman-card.is-loading .placeholder-line.text {
+  width: 100%;
+}
+
+.pengumuman-card.is-loading .placeholder-line.text.short {
+  width: 60%;
+}
+
+@keyframes loading-shimmer {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .pengumuman-card-title {
+    font-size: 1.05rem;
+  }
+  .pengumuman-card-summary {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .pengumuman-card-title {
+    font-size: 0.95rem;
+  }
+  .pengumuman-card-summary {
+    font-size: 0.75rem;
+  }
+}

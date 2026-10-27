@@ -1,0 +1,472 @@
+/* src/pages/HalamanDataCuaca.css */
+
+.weather-page-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: #333;
+}
+
+.weather-page-header {
+  text-align: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.weather-page-header h1 {
+  font-size: 2.5rem;
+  color: #0056b3; /* Biru untuk tema cuaca */
+  margin-bottom: 8px;
+}
+
+.weather-page-header h1 i {
+  margin-right: 10px;
+  color: #007bff;
+}
+
+.weather-page-header p {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.mountain-selector-container {
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mountain-selector-container label {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.mountain-select {
+  padding: 12px 15px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #fff;
+  width: 100%;
+  max-width: 400px; /* Batasi lebar dropdown */
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.mountain-select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.loading-message,
+.error-message,
+.select-prompt {
+  text-align: center;
+  padding: 40px 20px;
+  font-size: 1.2rem;
+  color: #6c757d;
+  border-radius: 8px;
+}
+
+.loading-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border-left-color: #007bff;
+  animation: spin 1s ease infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.error-message {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+.select-prompt {
+  text-align: center;
+  padding: 40px 20px;
+  color: #6c757d;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+.select-prompt i {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  display: block;
+  color: #007bff;
+}
+
+.weather-info-container {
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.weather-info-container h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 25px;
+}
+
+.current-weather-card {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  padding: 20px;
+  background: linear-gradient(
+    135deg,
+    #6dd5ed,
+    #2193b0
+  ); /* Gradien biru langit */
+  color: white;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+.weather-icon-big img {
+  width: 80px;
+  height: 80px;
+  filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.2));
+}
+
+.weather-details {
+  flex-grow: 1;
+}
+
+/* PERBAIKAN: Menambahkan text-shadow untuk keterbacaan */
+.weather-details .weather-summary,
+.weather-details .weather-temperature,
+.weather-details .weather-extra-info span {
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.weather-summary {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 0 5px 0;
+}
+
+.weather-temperature {
+  font-size: 2.8rem;
+  font-weight: bold;
+  margin: 0 0 10px 0;
+}
+
+.weather-extra-info {
+  display: flex;
+  gap: 20px;
+  font-size: 0.9rem;
+}
+.weather-extra-info span i {
+  margin-right: 5px;
+}
+
+.weather-info-container h3 {
+  font-size: 1.4rem;
+  color: #333;
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #eee;
+}
+
+.table-container {
+  overflow-x: auto; /* Agar tabel bisa di-scroll di layar kecil */
+}
+
+.forecast-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.forecast-table th,
+.forecast-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.forecast-table th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  color: #333;
+}
+
+.forecast-table tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+.weather-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.weather-icon-small {
+  width: 32px;
+  height: 32px;
+}
+
+/* Pastikan Anda sudah meload Bootstrap Icons di index.html atau App.js */
+/* @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"); */
+
+/* Date info styling */
+.date-info {
+  margin-top: 10px;
+  color: #666;
+  font-size: 1rem;
+}
+
+.date-info i {
+  margin-right: 8px;
+  color: #007bff;
+}
+
+/* API Toggle styling */
+.api-toggle-container {
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid #dee2e6;
+}
+
+.api-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+.api-toggle input[type="checkbox"] {
+  margin: 0;
+}
+
+/* Select prompt styling */
+.select-prompt {
+  text-align: center;
+  padding: 40px 20px;
+  color: #6c757d;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+.select-prompt i {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  display: block;
+  color: #007bff;
+}
+
+/* Location header styling */
+.location-header {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.location-header h2 {
+  color: #333;
+  margin-bottom: 5px;
+  font-size: 1.8rem;
+}
+
+.location-header h2 i {
+  margin-right: 10px;
+  color: #dc3545;
+}
+
+.location-details {
+  color: #666;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+/* Enhanced table styling */
+.forecast-table th i {
+  margin-right: 5px;
+  color: #007bff;
+}
+
+.current-time {
+  background-color: #e3f2fd !important;
+  font-weight: 600;
+}
+
+.time-cell {
+  font-weight: 600;
+  color: #007bff;
+}
+
+.temp-cell {
+  font-weight: 600;
+  color: #dc3545;
+}
+
+.humidity-cell {
+  color: #17a2b8;
+}
+
+.wind-cell {
+  color: #28a745;
+  text-align: center;
+}
+
+.wind-cell small {
+  color: #6c757d;
+}
+
+/* Weather tips section */
+.weather-tips {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #007bff;
+}
+
+.weather-tips h4 {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+}
+
+.weather-tips h4 i {
+  margin-right: 10px;
+  color: #ffc107;
+}
+
+.tips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.tip-card {
+  background-color: white;
+  padding: 15px;
+  border-radius: 6px;
+  border: 1px solid #dee2e6;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tip-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tip-card i {
+  font-size: 1.2rem;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.tip-card:nth-child(1) i {
+  color: #007bff;
+}
+.tip-card:nth-child(2) i {
+  color: #6c757d;
+}
+.tip-card:nth-child(3) i {
+  color: #28a745;
+}
+.tip-card:nth-child(4) i {
+  color: #17a2b8;
+}
+
+.tip-card p {
+  margin: 0;
+  color: #333;
+  line-height: 1.4;
+  font-size: 0.9rem;
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+  .weather-page-container {
+    padding: 15px;
+  }
+
+  .weather-page-header h1 {
+    font-size: 2rem;
+  }
+
+  .current-weather-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .weather-icon-big {
+    margin-bottom: 15px;
+  }
+
+  .weather-extra-info {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .tips-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .forecast-table {
+    font-size: 0.85rem;
+  }
+
+  .forecast-table th,
+  .forecast-table td {
+    padding: 8px 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .weather-page-header h1 {
+    font-size: 1.6rem;
+  }
+
+  .mountain-select {
+    width: 100%;
+  }
+
+  .current-weather-card {
+    padding: 15px;
+  }
+
+  .weather-temperature {
+    font-size: 2rem;
+  }
+}

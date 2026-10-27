@@ -1,0 +1,1512 @@
+/* Modern Minimalist Design for KelolaGunung */
+
+/* 1. Page Container - Konsisten dengan KelolaJalur */
+.gunung-management-page {
+  padding-top: 1.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  box-sizing: border-box;
+}
+
+/* 2. Modern Header & Controls */
+.controls-container {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  padding: 2rem;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  margin-bottom: 2rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.page-title {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #1e293b;
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.btn-add-new {
+  background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.25);
+}
+
+.btn-add-new:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.35);
+}
+
+.toolbar-row {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 1.5rem;
+}
+
+.search-bar {
+  position: relative;
+}
+
+.search-bar .bi-search {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #64748b;
+  pointer-events: none;
+  font-size: 1.1rem;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 1rem 1rem 1rem 3rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  background-color: #ffffff;
+}
+
+.search-bar input:focus {
+  outline: none;
+  border-color: #16a34a;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+  background-color: #ffffff;
+}
+
+.filters {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.filter-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #f8fafc;
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+}
+
+.filter-group label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #475569;
+  white-space: nowrap;
+  margin: 0;
+}
+
+.filter-group select,
+.filter-group .ketinggian-input {
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  background-color: #ffffff;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  transition: all 0.2s ease;
+  min-width: 0;
+}
+
+.filter-group select:focus,
+.filter-group .ketinggian-input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.1);
+}
+
+.filter-group .ketinggian-input {
+  width: 80px;
+}
+
+/* Ketinggian filter styling untuk 2 input dalam 1 group */
+.filter-group.ketinggian-group {
+  gap: 0.25rem;
+}
+
+.filter-group.ketinggian-group span {
+  color: #64748b;
+  font-weight: 500;
+  padding: 0 0.25rem;
+}
+
+/* 3. Table Styling - Konsisten dengan KelolaJalur */
+.table-container {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  overflow-x: auto;
+  border: 1px solid #e5e7eb;
+  margin-bottom: 1.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 900px;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.data-table th,
+.data-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #f3f4f6;
+  white-space: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.data-table th {
+  background-color: #f8fafc;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: #64748b;
+  font-weight: 600;
+  letter-spacing: 0.025em;
+}
+
+.data-table tbody tr {
+  transition: background-color 0.15s ease;
+}
+
+.data-table tbody tr:hover {
+  background-color: #f8fafc;
+}
+
+/* Header dengan sorting capability */
+.header-cell-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  user-select: none;
+}
+
+.sort-icon-active {
+  color: #475569;
+  font-size: 0.7rem;
+  opacity: 0.8;
+}
+
+/* 4. Modern Action Buttons - Optimized for compact layout */
+.action-buttons {
+  display: flex;
+  gap: 0.2rem;
+  justify-content: center;
+  align-items: center;
+  padding: 0.1rem;
+  flex-wrap: nowrap;
+}
+
+.action-btn {
+  width: 24px;
+  height: 24px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  font-size: 0.7rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Fallback styling untuk action buttons jika ada konflik */
+.action-buttons .action-btn {
+  min-width: 36px !important;
+  min-height: 36px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border: none !important;
+  border-radius: 8px !important;
+  cursor: pointer !important;
+  font-size: 0.9rem !important;
+  transition: all 0.3s ease !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  text-decoration: none !important;
+  outline: none !important;
+}
+
+/* Specific icon styling */
+.action-btn i {
+  font-size: 0.9rem !important;
+  display: inline-block !important;
+  line-height: 1 !important;
+}
+
+/* Button visibility fix */
+.btn-view-details i,
+.btn-view-paths i,
+.btn-edit i,
+.btn-delete i {
+  color: white !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Hover state icons */
+.btn-view-details:hover i,
+.btn-view-paths:hover i,
+.btn-edit:hover i,
+.btn-delete:hover i {
+  color: white !important;
+}
+
+.btn-view-details {
+  background: linear-gradient(135deg, #6366f1 0%, #4338ca 100%) !important;
+  color: white !important;
+}
+
+.btn-view-details:hover {
+  background: linear-gradient(135deg, #4338ca 0%, #3730a3 100%) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+.btn-view-paths {
+  background: linear-gradient(135deg, #059669 0%, #047857 100%) !important;
+  color: white !important;
+}
+
+.btn-view-paths:hover {
+  background: linear-gradient(135deg, #047857 0%, #065f46 100%) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.3);
+}
+
+.btn-edit {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%) !important;
+  color: white !important;
+}
+
+.btn-edit:hover {
+  background: linear-gradient(135deg, #d97706 0%, #b45309 100%) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+}
+
+.btn-delete {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%) !important;
+  color: white !important;
+}
+
+.btn-delete:hover {
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+.btn-delete:disabled {
+  background: linear-gradient(135deg, #9ca3af 0%, #6b7280 100%) !important;
+  color: white !important;
+  border: none !important;
+  cursor: not-allowed !important;
+}
+
+/* Input Group Styles */
+.input-group {
+  margin-bottom: 1.25rem;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #475569;
+  font-size: 0.9rem;
+}
+
+.input-wrapper-icon {
+  position: relative;
+}
+
+.input-wrapper-icon input {
+  width: 100%;
+  padding: 12px 15px 12px 50px; /* padding kiri untuk icon */
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #334155;
+  background-color: #f8fafc;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
+}
+
+.input-wrapper-icon input:focus {
+  outline: none;
+  border-color: #006400;
+  box-shadow: 0 0 0 3px rgba(0, 100, 0, 0.1);
+}
+
+.input-wrapper-icon > .bi {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #94a3b8;
+  font-size: 1.1rem;
+  pointer-events: none;
+}
+
+/* 6. Pagination Styles */
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  padding: 10px;
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+.pagination-info,
+.pagination-controls {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+.items-per-page-select {
+  padding: 5px 8px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  background-color: white;
+}
+.pagination-controls button {
+  background-color: white;
+  border: 1px solid #d1d5db;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 0 4px;
+}
+.pagination-controls button:disabled {
+  background-color: #f3f4f6;
+  cursor: not-allowed;
+  color: #9ca3af;
+}
+.pagination-controls span {
+  margin: 0 10px;
+}
+
+/* 7. Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+}
+.modal-content {
+  background-color: white;
+  padding: 25px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  animation: modal-fade-in 0.3s ease-out;
+}
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+}
+.modal-header h2 {
+  margin: 0;
+  font-size: 1.4rem;
+  color: #1e293b;
+}
+.modal-close-btn {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+  color: #6b7280;
+}
+.modal-body .modal-thumbnail {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+.modal-body .modal-deskripsi {
+  margin-top: 15px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  background-color: #f9fafb;
+  padding: 10px;
+  border-radius: 6px;
+}
+@keyframes modal-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Modal detail styling */
+.modal-details {
+  margin-top: 15px;
+}
+
+.detail-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 8px 0;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.detail-item:last-child {
+  border-bottom: none;
+}
+
+.detail-label {
+  font-weight: 600;
+  color: #374151;
+  min-width: 100px;
+  flex-shrink: 0;
+}
+
+.detail-value {
+  text-align: right;
+  color: #6b7280;
+  flex: 1;
+  margin-left: 15px;
+}
+
+/* Location list styling for multi-wilayah */
+.location-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-align: right;
+}
+
+.location-item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 0.9em;
+  color: #475569;
+}
+
+.location-item i {
+  flex-shrink: 0;
+}
+
+.rating-value {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4px;
+  color: #fbbf24;
+}
+
+.ulasan-count {
+  color: #6b7280;
+  font-size: 0.85em;
+}
+
+/* === TOOLBAR STYLING (KONSISTEN DENGAN KELOLAJALUR) === */
+.gunung-management-page .toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  gap: 20px;
+}
+
+.gunung-management-page .search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 40%;
+}
+
+.gunung-management-page .input-wrapper-icon {
+  position: relative;
+  width: 100%;
+}
+
+.gunung-management-page .input-wrapper-icon i {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #64748b;
+  pointer-events: none;
+  font-size: 1.1rem;
+  z-index: 1;
+}
+
+.gunung-management-page .input-wrapper-icon input {
+  width: 100%;
+  padding: 10px 10px 10px 35px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  height: 40px;
+  line-height: 1.5;
+  box-sizing: border-box;
+}
+
+.gunung-management-page .filter-container {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.gunung-management-page .filter-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.gunung-management-page .filter-group label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #4b5563;
+  white-space: nowrap;
+}
+
+.gunung-management-page .filter-group select {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  background-color: #ffffff;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.gunung-management-page .filter-group select:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 1px #3b82f6;
+}
+
+/* Styling khusus untuk filter ketinggian */
+.gunung-management-page .ketinggian-group .ketinggian-inputs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.gunung-management-page .ketinggian-input {
+  width: 70px !important;
+  padding: 8px 6px !important;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  background-color: #ffffff;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.gunung-management-page .ketinggian-inputs .separator {
+  color: #6b7280;
+  font-weight: 500;
+  margin: 0 2px;
+}
+
+.gunung-management-page .ketinggian-input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 1px #3b82f6;
+}
+
+/* --- Untuk Layar Menengah (misal: Tablet < 1200px) --- */
+/* Di titik ini, sidebar admin mungkin menyusut menjadi ikon saja */
+@media (max-width: 1200px) {
+  .gunung-management-page .page-header {
+    /* Sesuaikan jarak kiri dengan lebar sidebar baru Anda */
+    /* Contoh jika sidebar menjadi 90px */
+    left: 90px;
+    right: 16px;
+  }
+}
+
+/* --- Untuk Layar Kecil (misal: Tablet Potrait < 992px) --- */
+/* Di titik ini, sidebar biasanya hilang total. Kita harus menonaktifkan header sticky */
+@media (max-width: 992px) {
+  .gunung-management-page .page-header {
+    /* KUNCI UTAMA: Header tidak lagi mengambang, kembali menjadi bagian dari konten */
+    position: static;
+    border-radius: 8px;
+    margin-bottom: 20px; /* Beri jarak ke toolbar di bawahnya */
+  }
+
+  .gunung-management-page {
+    /* Hapus padding-top yang sebelumnya untuk header sticky */
+    padding-top: 1.5rem;
+  }
+
+  .gunung-management-page .toolbar {
+    /* Hapus margin-top karena header sudah memberi margin-bottom */
+    margin-top: 0;
+  }
+}
+
+/* Modern Mobile Responsive Design - Combined */
+@media (max-width: 768px) {
+  .gunung-management-page {
+    padding: 1rem;
+  }
+
+  .controls-container {
+    padding: 1.5rem;
+    border-radius: 12px;
+  }
+
+  .page-title {
+    font-size: 1.5rem;
+  }
+
+  .toolbar-row {
+    gap: 1rem;
+  }
+
+  /* Tabel responsive tanpa horizontal scroll */
+  .data-table {
+    min-width: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    font-size: 0.65rem;
+  }
+
+  .data-table th,
+  .data-table td {
+    padding: 0.3rem 0.2rem;
+    font-size: 0.65rem;
+  }
+
+  /* Sembunyikan kolom yang kurang penting di mobile */
+  .data-table .col-no,
+  .data-table .col-rating,
+  .data-table .col-ulasan,
+  .data-table .col-ketinggian,
+  .data-table .col-jalur {
+    display: none !important;
+  }
+
+  /* Pastikan kolom utama tetap terlihat dengan proporsi yang seimbang */
+  .data-table .col-nama-gunung {
+    width: 40% !important;
+  }
+
+  .data-table .col-ketinggian {
+    width: 25% !important;
+  }
+
+  .data-table .col-aksi {
+    width: 35% !important;
+    min-width: 120px !important;
+  }
+
+  /* Kompakkan action buttons di mobile */
+  .action-buttons {
+    gap: 0.15rem !important;
+  }
+
+  .action-btn {
+    width: 22px !important;
+    height: 22px !important;
+    font-size: 0.65rem !important;
+  }
+
+  /* Membuat header dan filter bertumpuk secara vertikal */
+  .gunung-management-page .page-header,
+  .filter-row {
+    flex-direction: column;
+    align-items: stretch; /* Memenuhi lebar container */
+    gap: 12px;
+  }
+
+  .gunung-management-page .page-header h1 {
+    font-size: 1.25rem; /* Perkecil judul di mobile */
+  }
+
+  /* Filter grup kiri dan kanan juga ditumpak */
+  .filter-group-left,
+  .filter-group-right {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  /* Khusus filter ketinggian, buat inputnya sejajar */
+  .filter-group-ketinggian {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr; /* Kolom untuk min, strip, maks */
+    width: 100%;
+  }
+
+  .filter-group-ketinggian input {
+    width: 100%; /* Input memenuhi ruang grid */
+  }
+
+  .filter-group-ketinggian span {
+    text-align: center;
+  }
+
+  .pagination {
+    flex-direction: column;
+    gap: 20px;
+    font-size: 0.8rem;
+  }
+}
+
+/* Ensure table never overflows */
+.table-container {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: visible;
+}
+
+.data-table {
+  width: 100%;
+  max-width: 100%;
+  /* Remove min-width to prevent overflow */
+}
+
+/* Responsive breakpoints for very small screens */
+@media (max-width: 900px) {
+  .data-table {
+    font-size: 0.65rem;
+  }
+
+  .action-btn {
+    width: 20px;
+    height: 20px;
+    font-size: 0.6rem;
+  }
+
+  .action-buttons {
+    gap: 0.1rem !important;
+  }
+}
+
+@media (max-width: 800px) {
+  .data-table th,
+  .data-table td {
+    padding: 0.25rem 0.15rem;
+    font-size: 0.6rem;
+  }
+
+  .action-btn {
+    width: 18px;
+    height: 18px;
+    font-size: 0.55rem;
+  }
+}
+
+/* Loading states */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem;
+  color: #64748b;
+  font-size: 1rem;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+}
+
+.loading-container::before {
+  content: "";
+  width: 32px;
+  height: 32px;
+  border: 3px solid #e2e8f0;
+  border-top: 3px solid #3b82f6;
+  border-radius: 50%;
+  animation: modernSpin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes modernSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Modern Form Error Styling */
+.form-error-message {
+  background: linear-gradient(135deg, #fef2f2 0%, #fecaca 100%);
+  border: 2px solid #fca5a5;
+  color: #dc2626;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  margin: 1rem 0;
+  font-weight: 500;
+}
+
+/* Modern Focus States */
+.search-bar input:focus,
+.filters select:focus,
+.filters input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+  background-color: #ffffff;
+}
+
+/* Smooth Transitions */
+* {
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+/* Card Hover Effects */
+.controls-container:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transform: translateY(-1px);
+}
+
+.table-container:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Smooth scrollbar styling if needed */
+.table-container::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+}
+
+.table-container::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 3px;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #cbd5e1 0%, #94a3b8 100%);
+  border-radius: 3px;
+}
+
+.table-container::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #94a3b8 0%, #64748b 100%);
+}
+
+/* Final safeguard - force table to respect container boundaries */
+.data-table {
+  table-layout: fixed !important;
+  width: 100% !important;
+  border-collapse: collapse !important;
+}
+
+/* Modern Scrollbar */
+.table-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.table-container::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 4px;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #cbd5e1 0%, #94a3b8 100%);
+  border-radius: 4px;
+}
+
+.table-container::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #94a3b8 0%, #64748b 100%);
+}
+
+/* Modern Rating Display */
+.rating-cell {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.375rem 0.75rem;
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #92400e;
+}
+
+.rating-cell .bi-star-fill {
+  color: #f59e0b;
+  font-size: 0.9rem;
+}
+
+/* Modern Table Data Styling */
+.col-nama-gunung {
+  font-weight: 600;
+  color: #1e293b;
+  white-space: normal !important;
+  line-height: 1.2;
+}
+
+.col-nama-gunung .gunung-name {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+.col-ketinggian {
+  color: #475569;
+  font-weight: 500;
+}
+
+.col-ulasan {
+  color: #64748b;
+  font-size: 0.85rem;
+}
+
+.col-no {
+  color: #94a3b8;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* Enhanced Table Cell Styling */
+.table-index {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+  border-radius: 50%;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.gunung-name-cell {
+  display: flex;
+  align-items: center;
+}
+
+.gunung-name {
+  font-weight: 600;
+  color: #1e293b;
+  font-size: 0.75rem;
+  line-height: 1.2;
+  word-break: break-word;
+}
+
+.height-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.4rem;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #ddd6fe 0%, #c4b5fd 100%);
+  color: #6d28d9;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.review-count {
+  color: #64748b;
+  font-size: 0.65rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.location-text {
+  color: #475569;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* Enhanced Empty State */
+.empty-state {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%) !important;
+  border: none !important;
+}
+
+.empty-state-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  color: #64748b;
+}
+
+/* Hover Effects for Table Rows */
+.data-table tbody tr:hover .table-index {
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  color: white;
+  transform: scale(1.1);
+}
+
+.data-table tbody tr:hover .gunung-name {
+  color: #3b82f6;
+}
+
+.data-table tbody tr:hover .height-badge {
+  background: linear-gradient(135deg, #bfdbfe 0%, #93c5fd 100%);
+  color: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+/* Improved Action Button Spacing */
+.action-buttons {
+  display: flex;
+  gap: 0.375rem;
+  justify-content: center;
+  padding: 0.25rem;
+}
+
+/* Debug styling - Menambahkan border untuk debug jika tombol tidak terlihat */
+.action-btn:not(.btn-delete) {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Pastikan action buttons container terlihat */
+.action-buttons {
+  display: flex !important;
+  gap: 0.375rem !important;
+  justify-content: center !important;
+  padding: 0.25rem !important;
+  min-height: 40px !important;
+  align-items: center !important;
+}
+
+/* Alternative text untuk action buttons jika icon tidak muncul */
+.btn-view-details::before {
+  content: attr(title);
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.7rem;
+  color: #64748b;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+.btn-view-details:hover::before {
+  opacity: 1;
+}
+
+/* Memastikan container table cell cukup lebar dengan ukuran yang dioptimalkan */
+.col-aksi {
+  min-width: 120px !important;
+  text-align: center !important;
+  padding: 0.75rem 0.25rem !important;
+}
+
+/* Hide location column completely */
+.col-lokasi {
+  display: none !important;
+}
+
+/* Force visibility */
+.action-btn[class*="btn-"] {
+  visibility: visible !important;
+  display: inline-flex !important;
+  opacity: 1 !important;
+}
+
+/* Fallback text styling for action buttons */
+.action-btn .btn-text {
+  position: absolute;
+  font-size: 1rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+/* Show fallback text if Bootstrap icons fail to load */
+.action-btn i:not([class*="bi-"]) + .btn-text,
+.action-btn i[class*="bi-"]:empty + .btn-text {
+  opacity: 1;
+}
+
+/* Hide fallback text when Bootstrap icons are properly loaded */
+.action-btn i[class*="bi-"]:not(:empty) + .btn-text {
+  opacity: 0;
+}
+
+/* Fallback for when Bootstrap Icons are not loaded */
+@supports not (font-family: "bootstrap-icons") {
+  .action-btn .btn-text {
+    opacity: 1 !important;
+  }
+  .action-btn i {
+    opacity: 0 !important;
+  }
+}
+
+/* Enhanced button visibility */
+.action-btn {
+  background-color: #f3f4f6 !important;
+  border: 1px solid #d1d5db !important;
+}
+
+/* Override any inherited styles that might hide buttons */
+.data-table .action-btn {
+  all: unset;
+  width: 36px !important;
+  height: 36px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 8px !important;
+  cursor: pointer !important;
+  position: relative !important;
+  transition: all 0.3s ease !important;
+}
+
+/* Ensure specific button colors override the default gray */
+.data-table .btn-view-details {
+  background: linear-gradient(135deg, #6366f1 0%, #4338ca 100%) !important;
+  color: white !important;
+  border: none !important;
+}
+
+.data-table .btn-view-paths {
+  background: linear-gradient(135deg, #059669 0%, #047857 100%) !important;
+  color: white !important;
+  border: none !important;
+}
+
+.data-table .btn-edit {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%) !important;
+  color: white !important;
+  border: none !important;
+}
+
+.data-table .btn-delete {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%) !important;
+  color: white !important;
+  border: none !important;
+}
+
+.data-table .btn-delete:disabled {
+  background: linear-gradient(135deg, #9ca3af 0%, #6b7280 100%) !important;
+  color: white !important;
+  border: none !important;
+  cursor: not-allowed !important;
+}
+
+/* Debug style - add visible border temporarily */
+.action-btn {
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Ultra compact styling for smaller columns */
+.table-index {
+  width: 20px;
+  height: 20px;
+  font-size: 0.65rem;
+  background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.gunung-name {
+  font-size: 0.75rem;
+  line-height: 1.2;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.height-badge {
+  font-size: 0.65rem;
+  padding: 0.2rem 0.4rem;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #ddd6fe 0%, #c4b5fd 100%);
+  color: #6d28d9;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.rating-cell {
+  font-size: 0.65rem;
+  padding: 0.2rem 0.4rem;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  color: #92400e;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.review-count {
+  font-size: 0.65rem;
+  color: #64748b;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* Final overflow prevention - ensure table always fits */
+.gunung-management-page {
+  overflow-x: hidden; /* Prevent horizontal scroll on page level */
+}
+
+.controls-container,
+.table-container {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Ensure table cells content doesn't break layout */
+.data-table th,
+.data-table td {
+  min-width: 0; /* Allow flexbox to shrink cells */
+  word-break: break-word;
+}
+
+/* Specific width constraints for very narrow screens */
+@media (max-width: 600px) {
+  .data-table {
+    font-size: 0.55rem;
+  }
+
+  .data-table th,
+  .data-table td {
+    padding: 0.2rem 0.1rem;
+  }
+
+  .action-btn {
+    width: 16px;
+    height: 16px;
+    font-size: 0.5rem;
+  }
+
+  .action-buttons {
+    gap: 0.05rem !important;
+  }
+
+  /* Ultra compact column widths for very small screens */
+  .col-no {
+    width: 8% !important;
+  }
+  .col-nama-gunung {
+    width: 30% !important;
+  }
+  .col-ketinggian {
+    width: 15% !important;
+  }
+  .col-rating {
+    width: 12% !important;
+  }
+  .col-ulasan {
+    width: 12% !important;
+  }
+  .col-aksi {
+    width: 23% !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .gunung-management-page {
+    padding: 0.5rem;
+  }
+
+  .controls-container {
+    padding: 1rem;
+  }
+
+  .data-table {
+    font-size: 0.5rem;
+  }
+}
+
+/* Responsive Design untuk Filter */
+@media (max-width: 768px) {
+  .filters {
+    gap: 1rem;
+    justify-content: flex-start;
+  }
+
+  .filter-group {
+    padding: 0.4rem 0.8rem;
+    min-width: auto;
+  }
+
+  .filter-group label {
+    font-size: 0.8rem;
+  }
+
+  .filter-group select,
+  .filter-group .ketinggian-input {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.8rem;
+  }
+
+  .filter-group .ketinggian-input {
+    width: 70px;
+  }
+}
+
+@media (max-width: 640px) {
+  .toolbar-row {
+    gap: 1rem;
+  }
+
+  .filters {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+
+  .filter-group {
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .filter-group.ketinggian-group {
+    justify-content: flex-start;
+    gap: 0.5rem;
+  }
+
+  .filter-group .ketinggian-input {
+    width: 80px;
+  }
+}
+
+/* Additional Filter Enhancements */
+.filter-group:hover {
+  border-color: #cbd5e1;
+  background-color: #f1f5f9;
+  transition: all 0.2s ease;
+}
+
+.filter-group select {
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right 0.5rem center;
+  background-repeat: no-repeat;
+  background-size: 1.5em 1.5em;
+  padding-right: 2.5rem;
+  appearance: none;
+}
+
+.filter-group .ketinggian-input::-webkit-outer-spin-button,
+.filter-group .ketinggian-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.filter-group .ketinggian-input {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+/* Clear filters functionality (optional) */
+.filters-clear-btn {
+  background: none;
+  border: 1px solid #d1d5db;
+  color: #6b7280;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filters-clear-btn:hover {
+  background-color: #f3f4f6;
+  border-color: #9ca3af;
+}
+
+/* --- Tambahan untuk alignment kolom aksi di desktop --- */
+.data-table .col-aksi,
+.data-table th.col-aksi {
+  text-align: center !important;
+  vertical-align: middle !important;
+  height: 100%;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+.data-table .col-aksi {
+  height: 100%;
+}
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.375rem;
+  height: 100%;
+  min-height: 40px;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.data-table td.col-aksi > .action-buttons {
+  height: 100%;
+}

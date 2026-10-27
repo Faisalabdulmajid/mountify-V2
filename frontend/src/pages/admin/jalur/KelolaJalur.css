@@ -1,0 +1,524 @@
+/* KelolaJalur.css (Final & Diperbaiki dengan !important) */
+
+.jalur-management-page {
+  padding-top: 1.5rem;
+}
+
+/* Style Header Halaman */
+.jalur-management-page .page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.jalur-management-page .page-header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  color: #1e293b;
+}
+.jalur-management-page .btn-add-new {
+  background-color: #006400;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 15px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.2s;
+}
+.jalur-management-page .btn-add-new:hover {
+  background-color: #004d00;
+}
+
+/* Style Toolbar (Search, Filter) */
+.jalur-management-page .toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+.jalur-management-page .search-container {
+  position: relative; /* Ini membuat elemen di dalamnya (dengan position: absolute) mengacu pada container ini */
+  display: flex;
+  align-items: center;
+  width: 40%;
+}
+.jalur-management-page .search-container i {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #64748b;
+  pointer-events: none;
+  font-size: 1.1rem;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.jalur-management-page .search-container input {
+  width: 100%;
+  /* Padding paling penting adalah yang di kiri (35px) untuk memberi ruang agar teks tidak dimulai di bawah ikon */
+  padding: 10px 10px 10px 35px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  height: 40px; /* Memberikan tinggi tetap untuk konsistensi */
+  line-height: 1.5;
+  box-sizing: border-box;
+}
+
+/* Style Tabel Data - Simple & Clean */
+.table-container {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  overflow-x: auto;
+  border: 1px solid #e5e7eb;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1100px;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.data-table th,
+.data-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #f3f4f6;
+  white-space: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.data-table th {
+  background-color: #f8fafc;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: #64748b;
+  font-weight: 600;
+  letter-spacing: 0.025em;
+}
+
+.data-table tbody tr {
+  transition: background-color 0.15s ease;
+}
+
+.data-table tbody tr:hover {
+  background-color: #f8fafc;
+}
+
+/* Header dengan sorting capability */
+.header-cell-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  user-select: none;
+}
+
+.sort-icon-active {
+  color: #475569;
+  font-size: 0.7rem;
+  opacity: 0.8;
+}
+
+/* Link styling untuk nama gunung */
+.data-table a {
+  color: #475569;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.data-table a:hover {
+  color: #1e293b;
+  text-decoration: underline;
+}
+
+/* Style Badge Status - Minimal & Clean */
+.status-badge {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  white-space: nowrap;
+  border: 1px solid #e5e7eb;
+  background-color: #f8fafc;
+  color: #475569;
+}
+
+/* Minimal status variations - only essential colors */
+.status-badge.status-open {
+  border-color: #d1d5db;
+  background-color: #f0f9ff;
+  color: #0f766e;
+}
+
+.status-badge.status-closed {
+  border-color: #d1d5db;
+  background-color: #fef2f2;
+  color: #991b1b;
+}
+
+.status-badge.status-neutral {
+  border-color: #d1d5db;
+  background-color: #f8fafc;
+  color: #64748b;
+}
+
+/* Style Tombol Aksi - Simple & Unified */
+.action-buttons {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.action-btn {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #ffffff;
+  color: #6b7280;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+  font-size: 0.8rem;
+}
+
+.action-btn:hover {
+  background-color: #f3f4f6;
+  border-color: #9ca3af;
+  color: #374151;
+  transform: translateY(-1px);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.btn-secondary {
+  padding: 8px 14px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #374151;
+  background-color: #f3f4f6;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.btn-secondary:hover {
+  background-color: #e5e7eb;
+  border-color: #9ca3af;
+}
+
+/* Tambahkan di dalam file KelolaJalur.css */
+
+.toolbar {
+  gap: 20px; /* Memberi jarak antara search bar dan filter */
+}
+
+.filter-container {
+  display: flex;
+  gap: 15px; /* Jarak antar filter dropdown */
+  align-items: center;
+  flex-grow: 1; /* Membuat filter mengambil sisa ruang */
+}
+
+.filter-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.filter-group label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #4b5563;
+  white-space: nowrap; /* Mencegah label turun baris */
+}
+
+.filter-group select {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  background-color: #ffffff;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.filter-group select:focus {
+  outline: none;
+  border-color: #006400; /* Warna hijau saat aktif */
+  box-shadow: 0 0 0 1px #006400;
+}
+
+/* === CLEAN ACTION BUTTON STYLING === */
+/* Remove the old specific button styling since we use unified styling now */
+
+/* Style Paginasi */
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  padding: 10px;
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+.pagination button {
+  background-color: white;
+  border: 1px solid #d1d5db;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-left: 5px;
+}
+.pagination button:disabled {
+  background-color: #f3f4f6;
+  cursor: not-allowed;
+  color: #9ca3af;
+}
+
+/* Additional table styling for better readability */
+
+/* Column-specific styling */
+.data-table td:first-child {
+  font-weight: 500;
+  color: #9ca3af;
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+/* Nama jalur styling */
+.data-table td:nth-child(2) {
+  font-weight: 500;
+  color: #1e293b;
+}
+
+/* Estimasi waktu styling */
+.data-table td:nth-child(4) {
+  font-family: "ui-monospace", "SFMono-Regular", monospace;
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
+/* Kesulitan styling */
+.data-table td:nth-child(5) {
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
+/* Empty state styling */
+.empty-state {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #f8fafc;
+}
+
+.empty-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: #9ca3af;
+}
+
+.empty-content i {
+  font-size: 1.5rem;
+  opacity: 0.6;
+}
+
+.empty-content span {
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+/* Responsive table adjustments */
+@media (max-width: 768px) {
+  .data-table th,
+  .data-table td {
+    padding: 8px 10px;
+    font-size: 0.8rem;
+  }
+
+  .action-btn {
+    width: 28px;
+    height: 28px;
+    font-size: 0.75rem;
+  }
+
+  .action-buttons {
+    gap: 4px;
+  }
+
+  .status-badge {
+    font-size: 0.7rem;
+    padding: 3px 6px;
+  }
+}
+
+/* Enhanced UX utilities */
+
+/* Tooltip enhancement */
+.action-btn[title]:hover::after {
+  content: attr(title);
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #1f2937;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  white-space: nowrap;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.action-btn {
+  position: relative;
+}
+
+/* Loading state for buttons */
+.action-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Focus states for accessibility */
+.action-btn:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+.data-table a:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Print styles */
+@media print {
+  .action-buttons {
+    display: none;
+  }
+
+  .table-container {
+    box-shadow: none;
+    border: 1px solid #000;
+  }
+
+  .data-table th {
+    background-color: #f0f0f0 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
+
+/* Utility classes for better table management */
+.table-wrapper {
+  position: relative;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 #f1f5f9;
+}
+
+.table-wrapper::-webkit-scrollbar {
+  height: 6px;
+}
+
+.table-wrapper::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 3px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Column width utilities */
+.col-compact {
+  width: 100%;
+  max-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Responsive utilities */
+@media (max-width: 1024px) {
+  .data-table th,
+  .data-table td {
+    padding: 10px 12px;
+  }
+}
+
+@media (max-width: 640px) {
+  .jalur-management-page .toolbar {
+    flex-direction: column;
+    gap: 15px;
+    align-items: stretch;
+  }
+
+  .jalur-management-page .search-container {
+    width: 100%;
+  }
+
+  .filter-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .filter-group {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+}
+
+/* Focus indicators for better accessibility */
+.data-table th[onClick]:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: -2px;
+}
+
+/* Print optimizations */
+@media print {
+  .jalur-management-page {
+    padding: 0;
+  }
+
+  .toolbar,
+  .pagination {
+    display: none;
+  }
+
+  .page-header .btn-add-new {
+    display: none;
+  }
+}

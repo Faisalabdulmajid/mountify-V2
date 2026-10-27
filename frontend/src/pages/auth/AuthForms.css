@@ -1,0 +1,242 @@
+/* Google Login Button Custom Styles */
+.google-login-btn-wrapper {
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: center;
+}
+
+.google-login-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid #d1d5db;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+  cursor: pointer;
+  position: relative;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.google-login-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.google-login-loading {
+  position: absolute;
+  right: 8px;
+  font-size: 13px;
+}
+/* Reset Password Page Styles */
+.reset-password-outer {
+  min-height: 60vh;
+  display: flex;
+  justify-content: center;
+  margin-top: 80px; /* adjust as needed to clear header */
+  padding-top: 0;
+}
+
+.reset-password-card {
+  box-shadow: 0 2px 16px rgba(44,62,80,0.08);
+  border-radius: 18px;
+  background: #fff;
+  padding: 32px;
+  max-width: 430px;
+  width: 100%;
+  margin-top: 48px;
+  margin-bottom: 48px;
+}
+
+.password-group {
+  position: relative;
+}
+
+.password-group {
+  position: relative;
+}
+
+.password-eye-icon {
+  cursor: pointer;
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  padding: 4px;
+  background: transparent;
+  display: flex;
+  align-items: center;
+}
+/* src/pages/auth/AuthForms.css (KODE FINAL - SESUAI DESAIN) */
+
+.auth-form-container {
+  width: 100%;
+  padding: 1.5rem;
+  box-sizing: border-box;
+  max-width: 430px;
+  margin: 0 auto;
+}
+
+.auth-form-container h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-top: 0;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.auth-form-group {
+  margin-bottom: 1.25rem;
+  text-align: left;
+}
+
+.auth-form-group label {
+  display: block;
+  font-weight: 600;
+  color: #34495e;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.auth-input {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border: 1px solid #dcdfe6;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
+}
+
+.auth-input::placeholder {
+  color: #a8abb2;
+}
+
+.auth-input:focus {
+  outline: none;
+  border-color: #16a34a;
+  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.1);
+}
+
+.auth-form-options {
+  text-align: right;
+  margin-top: -0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.auth-link {
+  background: none;
+  border: none;
+  color: #16a34a;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0;
+  text-decoration: none;
+}
+.auth-link:hover {
+  text-decoration: underline;
+}
+
+.auth-button {
+  width: 100%;
+  padding: 0.9rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #16a34a;
+  color: white;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  box-sizing: border-box;
+}
+.auth-button:hover:not(:disabled) {
+  background-color: #15803d;
+}
+
+.auth-divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 1.75rem 0;
+  color: #9ca3af;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+.auth-divider::before,
+.auth-divider::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid #e5e7eb;
+}
+.auth-divider:not(:empty)::before {
+  margin-right: 1em;
+}
+.auth-divider:not(:empty)::after {
+  margin-left: 1em;
+}
+
+.auth-google-button {
+  width: 100%;
+  padding: 0;
+  border: none;
+  background: none;
+  box-shadow: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+.auth-google-button > div,
+.auth-google-button button {
+  width: 100% !important;
+  min-height: 48px !important;
+  box-sizing: border-box !important;
+  border-radius: 8px !important;
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+  margin: 0 !important;
+  padding: 0.9rem 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: #fff !important;
+  color: #222 !important;
+  border: 1px solid #d1d5db !important;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04) !important;
+  transition: background 0.2s, border-color 0.2s;
+  cursor: pointer;
+  gap: 0.75rem;
+}
+.auth-google-button > div:hover,
+.auth-google-button button:hover {
+  background: #f3f4f6 !important;
+  border-color: #16a34a !important;
+}
+.auth-google-button img {
+  width: 24px;
+  height: 24px;
+  margin-right: 0.5rem;
+  display: inline-block;
+}
+
+.auth-navigation-prompt {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #4b5563;
+  margin-top: 2rem;
+}
+
+.auth-navigation-prompt .auth-link {
+  font-weight: 700;
+}

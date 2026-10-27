@@ -1,0 +1,163 @@
+/*
+ * File: footer.css
+ * Deskripsi: File styling untuk komponen Footer.
+ * Dibuat selaras dengan tema Header (Palet 2: Langit Senja).
+ */
+
+/* ============================================= */
+/* 1. Gaya Dasar Footer                          */
+/* ============================================= */
+
+.footer {
+  /* REVISI: Menggunakan variabel warna dari tema header */
+  background-color: var(
+    --primary-color,
+    #142640
+  ); /* Fallback color jika var tidak ada */
+  color: #a9b3c1; /* Warna teks dasar yang lebih lembut dari putih */
+  padding: 50px 25px 20px 25px;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between; /* REVISI: Layout otomatis merata, tidak perlu spacer */
+  flex-wrap: wrap; /* REVISI: Agar responsif jika kolom terlalu banyak */
+  gap: 30px; /* Jarak antar kolom */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-column {
+  flex: 1; /* Setiap kolom akan mencoba mengambil ruang yang sama */
+  min-width: 200px; /* Lebar minimum sebelum kolom turun baris */
+}
+
+/* DIHAPUS: Aturan untuk pemisah '|' tidak lagi digunakan */
+
+.footer-column h4 {
+  color: var(--text-color-light, #ffffff);
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.footer-tagline {
+  margin-top: 0;
+  margin-bottom: 15px;
+  max-width: 250px;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-link {
+  color: #a9b3c1; /* Warna link sama dengan teks dasar */
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-link:hover {
+  color: var(
+    --accent-color,
+    #f58554
+  ); /* REVISI: Warna hover selaras dengan header */
+}
+
+/* ============================================= */
+/* 2. Gaya Ikon Sosial Media                     */
+/* ============================================= */
+
+.footer-social-icons {
+  display: flex;
+  gap: 20px; /* Jarak antar ikon */
+  align-items: center;
+}
+
+.footer-social-link {
+  color: #a9b3c1;
+  font-size: 1.5rem; /* Ukuran ikon lebih besar */
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.footer-social-link:hover {
+  color: var(--accent-color, #f58554);
+  transform: translateY(-2px); /* Efek sedikit terangkat saat hover */
+}
+
+/* ============================================= */
+/* 3. Gaya Bagian Bawah Footer (Copyright)       */
+/* ============================================= */
+
+.footer-bottom {
+  padding-top: 20px;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-copyright {
+  color: #7d8da1; /* Warna copyright yang lebih redup */
+  font-size: 0.85rem;
+}
+
+/* ============================================= */
+/* 4. Aturan Responsive                          */
+/* ============================================= */
+
+/* Tablet */
+@media (max-width: 992px) {
+  .footer-container {
+    gap: 40px; /* Jarak lebih besar saat ditumpuk */
+  }
+  .footer-column {
+    min-width: 250px; /* Kolom bisa lebih lebar di tablet */
+    flex-basis: 40%; /* Mencoba membuat layout 2x2 jika memungkinkan */
+  }
+}
+
+/* Ponsel */
+@media (max-width: 767px) {
+  .footer {
+    padding: 40px 20px 20px 20px;
+  }
+  .footer-container {
+    flex-direction: column; /* Semua kolom ditumpuk vertikal */
+    gap: 35px;
+    align-items: flex-start; /* Konten dimulai dari kiri */
+  }
+  .footer-column {
+    flex-basis: auto; /* Reset basis flex */
+    width: 100%;
+    min-width: auto;
+  }
+  .footer-column h4 {
+    margin-bottom: 15px;
+  }
+}
+
+@media (max-width: 767px) {
+  /* Target kolom terakhir ('Ikuti Kami') */
+  .footer-column:last-of-type {
+    align-items: center;
+    text-align: center;
+  }
+
+  /* Memastikan ikon juga berada di tengah */
+  .footer-social-icons {
+    justify-content: center;
+  }
+}

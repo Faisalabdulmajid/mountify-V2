@@ -1,0 +1,388 @@
+.add-gunung-page {
+  padding-top: 1.5rem;
+}
+
+.add-gunung-page .page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+.add-gunung-page .page-header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  color: #1e293b;
+}
+
+.btn-back {
+  background-color: #f1f5f9;
+  color: #475569;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 10px 15px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.2s;
+  text-decoration: none;
+}
+.btn-back:hover {
+  background-color: #e2e8f0;
+}
+
+.btn-back-list {
+  background: linear-gradient(135deg, #f1f5f9 0%, #e0e7ef 100%);
+  color: #0369a1;
+  border: 1px solid #bae6fd;
+  border-radius: 8px;
+  padding: 0.5rem 1.25rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.2s, color 0.2s;
+  text-decoration: none;
+}
+.btn-back-list:hover {
+  background: linear-gradient(135deg, #bae6fd 0%, #7dd3fc 100%);
+  color: #0c4a6e;
+  border-color: #7dd3fc;
+}
+
+/* --- UNIFIKASI STYLE FORM ADMIN TAMBAH DATA --- */
+.form-widget-gunung,
+.form-widget-jalur,
+.form-widget-poi,
+.form-widget {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  margin-bottom: 32px;
+}
+
+.form-fieldset {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 20px 25px;
+  background-color: #ffffff;
+  margin-bottom: 24px;
+}
+
+.form-fieldset legend {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #111827;
+  padding: 0 10px;
+}
+
+/* =============================== */
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  margin-bottom: 20px;
+}
+/* Hapus margin-bottom terakhir dari form-row di dalam fieldset */
+.form-fieldset .form-row:last-child {
+  margin-bottom: 0;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+.form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.form-group label {
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #1e293b;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 1rem;
+  background: #f8fafc;
+  color: #1e293b;
+  margin-bottom: 4px;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: 2px solid #38bdf8;
+  border-color: #38bdf8;
+}
+
+.form-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: flex-end;
+  margin-top: 24px;
+}
+
+.btn-cancel {
+  background: #f1f5f9;
+  color: #475569;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 10px 18px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.btn-cancel:hover {
+  background: #e2e8f0;
+}
+
+.btn-save {
+  background: linear-gradient(135deg, #38bdf8 0%, #0ea5e9 100%);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 22px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.btn-save:hover {
+  background: linear-gradient(135deg, #0ea5e9 0%, #0369a1 100%);
+}
+
+/* --- END UNIFIKASI --- */
+
+/* Styling untuk komponen lokasi administratif */
+.selected-locations {
+  margin-top: 8px;
+}
+
+.location-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.location-tag {
+  display: inline-flex;
+  align-items: center;
+  background-color: #e1f5fe;
+  color: #006400;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.9em;
+  border: 1px solid #b3e5fc;
+}
+
+.remove-location {
+  margin-left: 8px;
+  background: none;
+  border: none;
+  color: #dc3545;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 0;
+  line-height: 1;
+}
+
+.remove-location:hover {
+  color: #c82333;
+}
+
+.form-select[multiple] {
+  height: 80px;
+  resize: vertical;
+}
+
+.form-select[multiple]:disabled {
+  background-color: #f8f9fa;
+  color: #6c757d;
+  cursor: not-allowed;
+}
+
+/* Styling untuk button tambah lokasi */
+.btn-add-location {
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn-add-location:disabled {
+  background-color: #94a3b8 !important;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.btn-add-location:disabled:hover {
+  background-color: #94a3b8 !important;
+}
+
+/* Enhanced location tags styling */
+.location-tag.enhanced {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f0f9ff;
+  color: #0c4a6e;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  border: 1px solid #bae6fd;
+  margin-bottom: 8px;
+  transition: all 0.2s ease;
+}
+
+.location-tag.enhanced:hover {
+  background-color: #e0f2fe;
+  border-color: #7dd3fc;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.location-info {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.location-text {
+  font-weight: 500;
+}
+
+.location-tag.enhanced .remove-location {
+  background: #fee2e2;
+  border: 1px solid #fca5a5;
+  color: #dc2626;
+  border-radius: 4px;
+  padding: 4px 6px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-left: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 24px;
+  height: 24px;
+}
+
+.location-tag.enhanced .remove-location:hover {
+  background: #fecaca;
+  border-color: #f87171;
+  color: #b91c1c;
+  transform: scale(1.1);
+}
+
+/* Empty state styling improvements */
+.selected-locations .bi-geo-alt {
+  color: #94a3b8;
+}
+
+/* Info badge styling */
+.location-tags + div {
+  font-weight: 500;
+}
+
+/* Responsive adjustments untuk form lokasi */
+@media (max-width: 768px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  .add-gunung-page .page-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  .form-row .form-group {
+    flex: 1 1 100%;
+  }
+
+  .btn-add-location {
+    width: 100%;
+    margin-top: 12px;
+    justify-content: center;
+  }
+}
+
+/* Map section styling */
+.map-section {
+  margin-top: 8px;
+}
+
+.gunung-map {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 2px solid #e2e8f0;
+  transition: border-color 0.2s ease;
+}
+
+.gunung-map:hover {
+  border-color: #0369a1;
+}
+
+.map-coordinates {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 12px;
+  padding: 12px;
+  background-color: #f0f9ff;
+  border: 1px solid #bae6fd;
+  border-radius: 6px;
+}
+
+.coordinate-info {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: #0c4a6e;
+}
+
+.btn-remove-coordinates {
+  background: #fee2e2;
+  border: 1px solid #fca5a5;
+  color: #dc2626;
+  border-radius: 4px;
+  padding: 6px 8px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
+  height: 32px;
+}
+
+.btn-remove-coordinates:hover {
+  background: #fecaca;
+  border-color: #f87171;
+  color: #b91c1c;
+  transform: scale(1.05);
+}
+
+/* Responsive map styling */
+@media (max-width: 768px) {
+  .map-coordinates {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .btn-remove-coordinates {
+    align-self: flex-end;
+  }
+}

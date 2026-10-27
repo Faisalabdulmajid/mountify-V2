@@ -1,0 +1,206 @@
+/* src/pages/admin/EksporData.css */
+
+.ekspor-data-container {
+  padding: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.export-card {
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.export-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  border-color: rgba(13, 110, 253, 0.2);
+}
+
+.export-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.export-icon.bg-success {
+  background: linear-gradient(135deg, #198754, #20c997);
+}
+
+.export-icon.bg-primary {
+  background: linear-gradient(135deg, #0d6efd, #6f42c1);
+}
+
+.export-icon.bg-warning {
+  background: linear-gradient(135deg, #fd7e14, #ffc107);
+}
+
+.export-card .card-title {
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.export-card .card-text {
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.export-card .btn {
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.export-card .btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Statistics Cards */
+.card.bg-success,
+.card.bg-primary,
+.card.bg-info {
+  border: none;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.card.bg-success:hover,
+.card.bg-primary:hover,
+.card.bg-info:hover {
+  transform: translateY(-2px);
+}
+
+.card.bg-success {
+  background: linear-gradient(135deg, #198754, #20c997) !important;
+}
+
+.card.bg-primary {
+  background: linear-gradient(135deg, #0d6efd, #6f42c1) !important;
+}
+
+.card.bg-info {
+  background: linear-gradient(135deg, #0dcaf0, #20c997) !important;
+}
+
+/* Information Card */
+.card-header {
+  background-color: #f8f9fa;
+  border-bottom: 2px solid #dee2e6;
+  border-radius: 12px 12px 0 0 !important;
+}
+
+.card-header h5 {
+  color: #495057;
+  font-weight: 600;
+}
+
+/* Loading States */
+.spinner-border-sm {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .ekspor-data-container {
+    padding: 1rem;
+  }
+
+  .export-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+
+  .card.bg-success .fs-1,
+  .card.bg-primary .fs-1,
+  .card.bg-info .fs-1 {
+    font-size: 2rem !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .row {
+    margin: 0;
+  }
+  
+  .col-lg-4,
+  .col-md-6,
+  .col-md-4 {
+    padding: 0.5rem;
+  }
+}
+
+/* Alert Styling */
+.alert {
+  border-radius: 10px;
+  border: none;
+  font-weight: 500;
+}
+
+.alert-danger {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+/* Button Disabled State */
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Hover Effects */
+.btn-link:hover {
+  text-decoration: none;
+}
+
+/* Text Styling */
+.text-muted {
+  color: #6c757d !important;
+}
+
+.card-text.text-muted {
+  color: #6c757d !important;
+}
+
+/* Icon Styling */
+.bi {
+  font-size: inherit;
+}
+
+/* Animation for Loading */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.export-card.loading {
+  animation: pulse 1s infinite;
+}
+
+/* Success State (for future enhancement) */
+.export-card.success {
+  border-color: #198754;
+  background-color: #f8fff8;
+}
+
+.export-card.success .card-title {
+  color: #198754;
+}
+
+/* Error State (for future enhancement) */
+.export-card.error {
+  border-color: #dc3545;
+  background-color: #fff8f8;
+}
+
+.export-card.error .card-title {
+  color: #dc3545;
+}

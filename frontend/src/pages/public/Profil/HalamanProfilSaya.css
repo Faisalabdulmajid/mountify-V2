@@ -1,0 +1,262 @@
+/* file: /pages/public/Profil/HalamanProfilSaya.css */
+
+/* Layout Utama */
+.halaman-profil-saya-container {
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 2rem;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  background-color: #f8f9fa;
+  min-height: 80vh;
+}
+
+/* Semua selector turunan diawali dengan .halaman-profil-saya-container */
+.halaman-profil-saya-container .page-header-profil {
+  text-align: left;
+  margin-bottom: 2.5rem;
+}
+
+.halaman-profil-saya-container .page-header-profil h1 {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #1e293b;
+  margin: 0;
+}
+
+.halaman-profil-saya-container .page-header-profil p {
+  font-size: 1.1rem;
+  color: #64748b;
+  margin-top: 0.5rem;
+}
+
+.halaman-profil-saya-container .profil-content-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+}
+
+.halaman-profil-saya-container .profil-form-card {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.halaman-profil-saya-container .card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #334155;
+  margin: 0 0 1.5rem 0;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.halaman-profil-saya-container .input-group {
+  margin-bottom: 1.25rem;
+}
+
+.halaman-profil-saya-container .input-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #475569;
+  font-size: 0.9rem;
+}
+
+.halaman-profil-saya-container .input-wrapper-icon {
+  position: relative;
+}
+
+.halaman-profil-saya-container .input-wrapper-icon input {
+  width: 100%;
+  padding: 12px 15px 12px 50px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #334155;
+  background-color: #f8fafc;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
+}
+
+.halaman-profil-saya-container .input-wrapper-icon input:focus {
+  outline: none;
+  border-color: #006400;
+  box-shadow: 0 0 0 3px rgba(0, 100, 0, 0.1);
+}
+
+.halaman-profil-saya-container .password-toggle-btn-left {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #94a3b8;
+  font-size: 1.1rem;
+  line-height: 1;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.halaman-profil-saya-container .password-toggle-btn-left:hover {
+  color: #334155;
+}
+.halaman-profil-saya-container .input-wrapper-icon > .bi:not(button .bi) {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #94a3b8;
+  font-size: 1.1rem;
+  pointer-events: none;
+}
+
+.halaman-profil-saya-container .btn-submit-profil {
+  width: 100%;
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 8px;
+  border: none;
+  background-color: #006400;
+  color: white;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.halaman-profil-saya-container .btn-submit-profil:hover:not(:disabled) {
+  background-color: #005300;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.halaman-profil-saya-container .btn-submit-profil:disabled {
+  background-color: #a5d6a7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.halaman-profil-saya-container .avatar-section-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.halaman-profil-saya-container .avatar-container {
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+  margin-bottom: 1rem;
+}
+.halaman-profil-saya-container .avatar-container:hover {
+  transform: scale(1.05);
+}
+.halaman-profil-saya-container .avatar-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.halaman-profil-saya-container .avatar-placeholder {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: #e5e7eb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.halaman-profil-saya-container .avatar-placeholder i {
+  font-size: 4rem;
+  color: #9ca3af;
+}
+.halaman-profil-saya-container input[type="file"]#avatar {
+  display: none;
+}
+
+.halaman-profil-saya-container .btn-upload-label {
+  display: inline-block;
+  padding: 10px 15px;
+  background-color: #f0f2f5;
+  color: #334155;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  font-size: 0.9rem;
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+  margin-bottom: 1rem;
+}
+.halaman-profil-saya-container .btn-upload-label:hover {
+  background-color: #e5e7eb;
+}
+.halaman-profil-saya-container .avatar-instruction {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-top: -1rem;
+  margin-bottom: 1rem;
+}
+
+.halaman-profil-saya-container .modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(17, 24, 39, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+.halaman-profil-saya-container .modal-content {
+  position: relative;
+}
+.halaman-profil-saya-container .modal-image {
+  display: block;
+  max-width: 80vw;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 8px;
+}
+.halaman-profil-saya-container .modal-close-btn {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  width: 36px;
+  height: 36px;
+  background: #fff;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.8rem;
+  color: #374151;
+  cursor: pointer;
+}
+
+.halaman-profil-saya-container .loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  font-size: 1.2rem;
+  color: #64748b;
+}
+
+@media (max-width: 992px) {
+  .halaman-profil-saya-container .profil-content-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,51 @@
+/*
+ * File: App.css
+ * Deskripsi: Berisi gaya GLOBAL dan STRUKTUR DASAR untuk seluruh aplikasi.
+ * Gaya spesifik komponen (Header, Footer, Sections) telah dipindahkan
+ * ke file CSS masing-masing.
+*/
+
+/* ==========================================================================
+   1. Global & Body Styles
+   ========================================================================== */
+body {
+  margin: 0;
+  /* Ganti dengan font pilihan Anda. Poppins adalah pilihan yang baik. */
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Warna latar belakang default untuk halaman seperti /explore, /privacy, dll. */
+  background-color: #f7f7f9; /* Menggunakan warna dari Palet 2 */
+}
+
+/* ==========================================================================
+   2. Struktur Layout Utama Aplikasi
+   ========================================================================== */
+
+/* .App adalah flex container utama yang mengatur posisi Header, Main, dan Footer */
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Memastikan .App setidaknya setinggi layar */
+}
+
+/* .main-container adalah area konten utama yang akan mengisi ruang kosong */
+.main-container {
+  flex-grow: 1; /* Ini adalah properti kunci agar footer tetap di bawah */
+}
+
+/* ==========================================================================
+   3. Utility Class untuk Halaman Publik
+   ========================================================================== */
+
+/* Wrapper ini digunakan di App.js untuk halaman-halaman yang bukan homepage,
+   agar kontennya memiliki padding dan tidak tertutup oleh header fixed. */
+.public-page-wrapper {
+  padding-top: 100px; /* 60px (header) + 40px (jarak) */
+  padding-bottom: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}

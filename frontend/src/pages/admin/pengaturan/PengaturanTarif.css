@@ -1,0 +1,275 @@
+/* PengaturanTarif.css */
+.pengaturan-tarif-page {
+  padding: 24px;
+  max-width: 800px;
+  margin: 0 auto;
+  background: #f8fafc;
+  min-height: calc(100vh - 100px);
+}
+
+.pengaturan-tarif-page h2 {
+  margin-bottom: 8px;
+  color: #1e293b;
+  font-size: 28px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.pengaturan-tarif-page h2::before {
+  content: "⚙️";
+  font-size: 24px;
+}
+
+.pengaturan-tarif-page .subtitle {
+  color: #64748b;
+  font-size: 16px;
+  margin-bottom: 32px;
+  font-weight: 400;
+}
+
+.pengaturan-tarif-page .form-container {
+  background: white;
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e2e8f0;
+}
+
+.pengaturan-tarif-page .form-header {
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.pengaturan-tarif-page .form-header h3 {
+  color: #334155;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pengaturan-tarif-page .form-header h3::before {
+  content: "💰";
+  font-size: 18px;
+}
+
+.pengaturan-tarif-page .form-group {
+  margin-bottom: 24px;
+}
+
+.pengaturan-tarif-page .form-group label {
+  display: block;
+  margin-bottom: 12px;
+  color: #374151;
+  font-weight: 600;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pengaturan-tarif-page .form-group label::before {
+  content: "🚗";
+  font-size: 16px;
+}
+
+.pengaturan-tarif-page .input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.pengaturan-tarif-page .currency-prefix {
+  position: absolute;
+  left: 16px;
+  color: #6b7280;
+  font-weight: 600;
+  font-size: 16px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.pengaturan-tarif-page .form-group input {
+  width: 100%;
+  padding: 16px 16px 16px 40px;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  background: #f9fafb;
+  color: #111827;
+}
+
+.pengaturan-tarif-page .form-group input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  background: white;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+  transform: translateY(-1px);
+}
+
+.pengaturan-tarif-page .form-group input:disabled {
+  background-color: #f3f4f6;
+  color: #9ca3af;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.pengaturan-tarif-page .input-help {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #6b7280;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pengaturan-tarif-page .input-help::before {
+  content: "💡";
+  font-size: 12px;
+}
+
+.pengaturan-tarif-page .btn-save {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+  padding: 16px 32px;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.pengaturan-tarif-page .btn-save::before {
+  content: "💾";
+  font-size: 14px;
+}
+
+.pengaturan-tarif-page .btn-save:hover:not(:disabled) {
+  background: linear-gradient(135deg, #059669, #047857);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px -3px rgba(0, 0, 0, 0.15);
+}
+
+.pengaturan-tarif-page .btn-save:disabled {
+  background: linear-gradient(135deg, #9ca3af, #6b7280);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+  opacity: 0.7;
+}
+
+.pengaturan-tarif-page .btn-save:disabled::before {
+  content: "⏳";
+}
+
+.pengaturan-tarif-page .info-card {
+  background: linear-gradient(135deg, #eff6ff, #dbeafe);
+  border: 1px solid #bfdbfe;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 24px;
+}
+
+.pengaturan-tarif-page .info-card h4 {
+  color: #1e40af;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 12px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pengaturan-tarif-page .info-card h4::before {
+  content: "ℹ️";
+  font-size: 14px;
+}
+
+.pengaturan-tarif-page .info-card p {
+  color: #1e40af;
+  font-size: 14px;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.pengaturan-tarif-page .example-calculation {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 8px;
+  padding: 12px;
+  margin-top: 12px;
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+  color: #166534;
+}
+
+/* Loading State */
+.pengaturan-tarif-page .loading-state {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 40px;
+  color: #6b7280;
+  font-size: 16px;
+}
+
+.pengaturan-tarif-page .loading-spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #e5e7eb;
+  border-top: 2px solid #3b82f6;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .pengaturan-tarif-page {
+    padding: 16px;
+  }
+  
+  .pengaturan-tarif-page .form-container {
+    padding: 20px;
+    border-radius: 12px;
+  }
+  
+  .pengaturan-tarif-page h2 {
+    font-size: 24px;
+  }
+  
+  .pengaturan-tarif-page .form-group input {
+    font-size: 16px;
+    padding: 14px 14px 14px 36px;
+  }
+  
+  .pengaturan-tarif-page .btn-save {
+    font-size: 14px;
+    padding: 14px 24px;
+    min-width: 150px;
+  }
+  
+  .pengaturan-tarif-page .currency-prefix {
+    left: 12px;
+    font-size: 14px;
+  }
+}

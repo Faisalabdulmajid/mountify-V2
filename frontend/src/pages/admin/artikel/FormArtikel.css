@@ -1,0 +1,153 @@
+/* src/pages/admin/artikel/FormArtikel.css */
+.add-edit-artikel-page {
+  padding: 2rem;
+}
+
+.form-widget-artikel {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.form-main-column {
+  flex: 3;
+}
+
+.form-sidebar-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: sticky;
+  top: 2rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #374151;
+}
+
+.form-group input[type="text"],
+.form-group select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.form-group input[type="text"]:focus,
+.form-group select:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.4);
+  outline: none;
+}
+
+.ql-toolbar.ql-snow {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  border-color: #d1d5db;
+}
+.ql-container.ql-snow {
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border-color: #d1d5db;
+  min-height: 400px;
+  font-size: 1rem;
+}
+.ql-editor {
+  line-height: 1.6;
+}
+
+.widget-card-artikel-settings {
+  background-color: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+.widget-card-artikel-settings h3 {
+  padding: 1rem 1.25rem;
+  margin: 0;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 1rem;
+  font-weight: 600;
+}
+.widget-card-artikel-settings .form-group,
+.widget-card-artikel-settings .form-actions {
+  padding: 1.25rem;
+  margin-bottom: 0;
+}
+.widget-card-artikel-settings .form-actions {
+  padding-top: 0;
+}
+.btn-save-artikel {
+  width: 100%;
+  background-color: #16a34a;
+  color: white;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.btn-save-artikel:hover {
+  background-color: #15803d;
+}
+.btn-save-artikel:disabled {
+  background-color: #9ca3af;
+  cursor: not-allowed;
+}
+
+.foto-upload-container-artikel {
+  border: 2px dashed #d1d5db;
+  border-radius: 8px;
+  padding: 1rem;
+  cursor: pointer;
+  transition: border-color 0.2s;
+  overflow: hidden;
+}
+.foto-upload-container-artikel:hover {
+  border-color: #3b82f6;
+}
+.foto-preview-artikel {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/10;
+  object-fit: cover;
+  border-radius: 6px;
+}
+.foto-placeholder-artikel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #9ca3af;
+  height: 150px;
+}
+.foto-placeholder-artikel i {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+.foto-placeholder-artikel p {
+  font-weight: 600;
+  margin: 0;
+}
+.foto-placeholder-artikel span {
+  font-size: 0.8rem;
+  margin-top: 4px;
+}
+
+.loading-container {
+  padding: 4rem;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #6b7280;
+}

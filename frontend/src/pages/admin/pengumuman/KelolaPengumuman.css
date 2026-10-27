@@ -1,0 +1,261 @@
+.pengumuman-management-page {
+  padding-top: 1.5rem;
+}
+.pengumuman-management-page .page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+.pengumuman-management-page .page-header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  color: #1e293b;
+}
+.pengumuman-management-page .btn-add-new {
+  background-color: #006400; /* Mountify Green */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 15px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.2s;
+}
+.pengumuman-management-page .btn-add-new:hover {
+  background-color: #004d00;
+}
+
+.pengumuman-management-page .toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+.pengumuman-management-page .search-container {
+  position: relative;
+  width: 50%;
+}
+.pengumuman-management-page .search-container i {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  color: #9ca3af;
+}
+.pengumuman-management-page .search-container input {
+  width: 100%;
+  padding: 10px 10px 10px 35px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+/* Tabel Data - Konsisten dengan KelolaGunung & KelolaJalur */
+.table-container {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  overflow-x: auto;
+  border: 1px solid #e5e7eb;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.data-table th,
+.data-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #f3f4f6;
+  white-space: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: middle;
+}
+
+.data-table th {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #475569;
+  font-weight: 600;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.data-table tbody tr {
+  transition: all 0.2s ease;
+}
+
+.data-table tbody tr:hover {
+  background-color: #f8fafc;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.pengumuman-judul {
+  font-weight: 600;
+  color: #1e293b;
+}
+.status-badge {
+  padding: 3px 8px;
+  border-radius: 10px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  white-space: nowrap;
+}
+.status-badge.status-dipublikasikan {
+  background-color: #d1fae5;
+  color: #065f46;
+} /* Hijau */
+.status-badge.status-draft {
+  background-color: #e5e7eb;
+  color: #4b5563;
+} /* Abu-abu */
+.status-badge.status-dijadwalkan {
+  background-color: #fef3c7;
+  color: #92400e;
+} /* Kuning */
+
+.action-buttons {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.action-btn {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #ffffff;
+  color: #6b7280;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+
+.action-btn:hover {
+  border-color: #9ca3af;
+  background-color: #f9fafb;
+}
+
+.btn-edit:hover {
+  color: #f59e0b;
+  border-color: #f59e0b;
+  background-color: #fffbeb;
+}
+
+.btn-delete:hover {
+  color: #ef4444;
+  border-color: #ef4444;
+  background-color: #fef2f2;
+}
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  padding: 10px;
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+.pagination button {
+  background-color: white;
+  border: 1px solid #d1d5db;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-left: 5px;
+}
+.pagination button:disabled {
+  background-color: #f3f4f6;
+  cursor: not-allowed;
+  color: #9ca3af;
+}
+
+/* src/pages/admin/pengumuman/KelolaPengumuman.css */
+
+/* ... (kode CSS Anda yang sudah ada) ... */
+
+.pengumuman-management-page .toolbar {
+  display: flex;
+  justify-content: space-between; /* Pastikan ini ada */
+  align-items: center; /* Pastikan ini ada */
+  gap: 20px; /* Menambahkan jarak antar elemen toolbar */
+}
+
+/* Penyesuaian agar search dan filter tidak terlalu lebar */
+.pengumuman-management-page .search-container {
+  flex-grow: 1; /* Biarkan search box tumbuh */
+  max-width: 500px;
+}
+.filter-container {
+  flex-shrink: 0; /* Mencegah filter menyusut */
+}
+
+.filter-container select {
+  padding: 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background-color: #fff;
+  font-size: 0.9rem;
+  min-width: 200px; /* Lebar minimum agar tidak terlalu kecil */
+  cursor: pointer;
+}
+
+/* Tambahkan juga style untuk status baru jika belum ada */
+.status-badge.status-sedang-berlangsung {
+  background-color: #d1fae5; /* Green */
+  color: #065f46;
+}
+.status-badge.status-kadaluarsa {
+  background-color: #fee2e2; /* Red */
+  color: #991b1b;
+}
+
+/* Header dengan sorting capability */
+.header-cell-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  user-select: none;
+}
+
+.sort-icon-active {
+  color: #475569;
+  font-size: 0.7rem;
+  opacity: 0.8;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .pengumuman-management-page .toolbar {
+    flex-direction: column;
+    gap: 15px;
+    align-items: stretch;
+  }
+
+  .pengumuman-management-page .search-container {
+    max-width: none;
+  }
+}

@@ -1,0 +1,159 @@
+/* Styling untuk Halaman Semua Artikel & Informasi */
+
+.artikel-page-container {
+  padding-top: 40px;
+  padding-bottom: 60px;
+  background-color: #f8f9fa;
+  min-height: 100vh;
+}
+
+.page-header {
+  max-width: 900px;
+  margin: 0 auto 40px auto;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.page-header h1 {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+.page-header h1 i {
+  color: #27ae60;
+}
+
+.page-header .page-subtitle {
+  font-size: 1.1rem;
+  color: #7f8c8d;
+  margin: 0;
+}
+
+.artikel-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.artikel-list-item {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.artikel-list-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.artikel-list-item-gambar-container {
+  width: 100%;
+  height: 250px;
+  border-radius: 12px 12px 0 0;
+  overflow: hidden;
+}
+
+.artikel-list-item-gambar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.artikel-list-item:hover .artikel-list-item-gambar {
+  transform: scale(1.05);
+}
+
+.artikel-list-item-konten {
+  padding: 10px 30px 30px 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.artikel-list-item-kategori {
+  display: inline-block;
+  background-color: #eaf8f0;
+  color: #27ae60;
+  padding: 6px 15px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  align-self: flex-start;
+}
+
+.artikel-list-item-judul {
+  margin: 0 0 15px 0;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #2c3e50;
+  line-height: 1.4;
+}
+
+.artikel-list-item-judul a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.2s ease;
+}
+.artikel-list-item-judul a:hover {
+  color: #27ae60;
+}
+
+.artikel-list-item-ringkasan {
+  margin: 0 0 20px 0;
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.7;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.artikel-list-item-meta {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  border-top: 1px solid #f0f0f0;
+  padding-top: 15px;
+  margin-top: auto;
+}
+
+.artikel-list-item-meta span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.artikel-status-message {
+  text-align: center;
+  padding: 60px 20px;
+  font-size: 1.2rem;
+  color: #6c757d;
+}
+
+@media (max-width: 768px) {
+  .artikel-list-item {
+    flex-direction: column;
+  }
+  .artikel-list-item-gambar-container {
+    width: 100%;
+    height: 200px;
+  }
+  .artikel-list-item-konten {
+    padding: 25px;
+  }
+}

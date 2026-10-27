@@ -1,0 +1,66 @@
+/* src/pages/public/FAQ/HalamanFAQ.css */
+/* Menggunakan kembali beberapa gaya dari PrivacyPolicy.css */
+@import "../PrivacyPolicy/PrivacyPolicy.css";
+
+.faq-list {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.faq-item {
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.faq-question {
+  width: 100%;
+  background-color: #fff;
+  padding: 20px 25px;
+  border: none;
+  text-align: left;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2c3e50;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.2s;
+}
+
+.faq-question:hover {
+  background-color: #f8f9fa;
+}
+
+.faq-question i {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.faq-question i.open {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.25, 0.8, 0.25, 1),
+    padding 0.4s ease;
+  background-color: #f8f9fa;
+}
+
+.faq-answer.open {
+  max-height: 500px; /* Cukup besar untuk menampung konten */
+  padding: 25px;
+  border-top: 1px solid #e9ecef;
+}
+
+.faq-answer p {
+  margin: 0;
+  line-height: 1.7;
+  color: #495057;
+}

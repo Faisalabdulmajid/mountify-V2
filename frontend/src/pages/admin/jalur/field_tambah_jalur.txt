@@ -1,0 +1,34 @@
+# Data yang Harus Diisi untuk Tambah Jalur Pendakian
+
+Berikut adalah field yang wajib dan opsional diisi pada form Tambah Jalur Pendakian sesuai dengan file `TambahJalur.js`:
+
+## 1. Identitas Jalur
+- **Pilih Gunung** (`id_gunung`) - WAJIB
+- **Nama Jalur** (`nama_jalur`) - WAJIB
+- **Lokasi Pintu Masuk/Gerbang** (`lokasi_pintu_masuk`) - OPSIONAL
+- **Status Jalur** (`status_jalur`) - WAJIB (default: Belum Diketahui)
+
+## 2. Parameter Fuzzy Engine
+- **Estimasi Waktu (Jam)** (`estimasi_waktu_jam`) - WAJIB
+- **Ketersediaan Sumber Air** (`ketersediaan_sumber_air_skala`) - WAJIB (dropdown)
+- **Variasi Lanskap** (`variasi_lanskap_skala`) - WAJIB (dropdown)
+- **Perlindungan Angin Kemah** (`perlindungan_angin_kemah_skala`) - WAJIB (dropdown)
+- **Jaringan Komunikasi** (`jaringan_komunikasi_skala`) - WAJIB (dropdown)
+- **Tingkat Insiden** (`tingkat_insiden_skala`) - WAJIB (dropdown)
+
+## 3. Parameter Penilaian (Deskriptif)
+- **Medan & Tanjakan** (`medan`) - WAJIB (dropdown)
+- **Navigasi & Petunjuk Arah** (`navigasi`) - WAJIB (dropdown)
+- **Fasilitas Basecamp** (`basecamp`) - WAJIB (dropdown)
+- **Lahan & Kapasitas Kemah** (`lahan_kemah`) - WAJIB (dropdown)
+- **Spot Pemandangan (Viewpoint)** (`viewpoint`) - WAJIB (dropdown)
+
+## 4. Deskripsi Tambahan
+- **Deskripsi Singkat Jalur** (`deskripsi_jalur`) - OPSIONAL
+
+---
+
+**Catatan:**
+- Semua field dropdown memiliki pilihan "Belum Diketahui" jika data tidak tersedia.
+- Field yang bertanda WAJIB harus diisi agar data dapat disimpan.
+- Field lain dapat dikosongkan jika tidak ada informasi.

@@ -1,0 +1,69 @@
+.lapor-error-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  min-height: 80vh;
+}
+.lapor-error-card {
+  background-color: #fff;
+  color: #333;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+}
+.lapor-error-card h2 {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  color: #1e293b;
+}
+.lapor-error-card p {
+  text-align: center;
+  color: #64748b;
+  margin-bottom: 2rem;
+}
+.lapor-error-card .form-group {
+  margin-bottom: 1.5rem;
+}
+.lapor-error-card label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #475569;
+}
+.lapor-error-card input,
+.lapor-error-card textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+.lapor-error-card input:focus,
+.lapor-error-card textarea:focus {
+  outline: none;
+  border-color: #006400;
+  box-shadow: 0 0 0 2px rgba(0, 100, 0, 0.2);
+}
+.btn-submit-laporan {
+  width: 100%;
+  padding: 0.8rem;
+  background-color: #dc2626;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.btn-submit-laporan:hover {
+  background-color: #b91c1c;
+}
+.btn-submit-laporan:disabled {
+  background-color: #fca5a5;
+  cursor: not-allowed;
+}

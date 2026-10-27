@@ -1,0 +1,314 @@
+/*
+ * File: HeaderWithNavbar.css
+ * Deskripsi: File styling final untuk komponen HeaderWithNavbar.
+ * Perubahan Kunci: Header dibuat selalu solid untuk keterbacaan di semua halaman.
+ * Tema Aktif: Palet 2 - "Langit Senja di Gunung"
+ */
+
+/* ============================================= */
+/* 1. Definisi Variabel Warna (Tema)             */
+/* ============================================= */
+:root {
+  /* -- TEMA AKTIF: Palet 2 "Langit Senja di Gunung" -- */
+  --primary-color: #142640;
+  --primary-color-dark: #0d1a2b;
+  --accent-color: #f58554;
+  --accent-color-dark: #e07041;
+  --text-color-light: #ffffff;
+  --text-color-dark: #1f1f1f;
+  --background-light: #f7f7f9;
+  --overlay-dark: rgba(0, 0, 0, 0.6);
+  --hover-alpha-dark: rgba(0, 0, 0, 0.1);
+  --hover-alpha-light: rgba(255, 255, 255, 0.1);
+  --logout-color-hover: #e74c3c;
+  --border-color-light: rgba(255, 255, 255, 0.7);
+}
+
+/* ============================================= */
+/* 2. Gaya Dasar Header & Efek Scroll            */
+/* ============================================= */
+.App-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* PERUBAHAN UTAMA: Header selalu solid */
+  background-color: var(--primary-color);
+  color: var(--text-color-light);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  z-index: 1010;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Diberi shadow default */
+  padding: 0 25px;
+  box-sizing: border-box;
+  transition: background-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Kelas .scrolled tetap ada untuk konsistensi jika ingin menambahkan efek lain saat scroll */
+.App-header.scrolled {
+  /* Bisa ditambahkan properti lain di sini jika perlu, misal shadow lebih tebal */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* ============================================= */
+/* 3. Logo dan Judul                             */
+/* ============================================= */
+.logo-container,
+.title-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--text-color-light);
+}
+.App-logo {
+  height: 38px;
+  margin-right: 12px;
+}
+.title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* ============================================= */
+/* 4. Gaya Navigasi Desktop & Dropdown           */
+/* ============================================= */
+.nav {
+  display: flex;
+  align-items: center;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 0;
+  margin: 0;
+}
+
+/* Gaya Link Navigasi Biasa */
+.nav-links .nav-link {
+  padding: 8px 16px;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 6px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  color: var(--text-color-light);
+}
+.nav-links .nav-link:hover {
+  background-color: var(--hover-alpha-light);
+}
+.nav-links .nav-link.active {
+  color: var(--accent-color);
+  font-weight: 700;
+  background-color: var(
+    --hover-alpha-light
+  ); /* Beri sedikit background pada link aktif */
+}
+
+/* Gaya untuk wrapper <li> yang berisi button */
+.nav-item-button {
+  display: flex;
+  align-items: center;
+}
+
+/* Gaya dropdown */
+.dropdown {
+  position: relative;
+}
+.dropdown-button {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  color: var(--text-color-light);
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 8px 10px;
+}
+.dropdown-chevron {
+  transition: transform 0.2s ease-in-out;
+}
+.dropdown-chevron.open {
+  transform: rotate(180deg);
+}
+.dropdown-content {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  background-color: var(--primary-color); /* disamakan dengan header */
+  min-width: 180px;
+  box-shadow: none;
+  z-index: 1011;
+  border-radius: 0;
+  overflow: hidden;
+}
+.dropdown-item {
+  display: block;
+  width: 100%;
+  padding: 12px 15px;
+  text-decoration: none;
+  color: var(--text-color-light); /* teks putih default */
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background 0.2s, color 0.2s;
+}
+.dropdown-item:hover {
+  background-color: #fff;
+  color: #1f1f1f; /* teks hitam saat hover */
+}
+.dropdown-item.logout:hover {
+  background-color: var(--logout-color-hover);
+  color: white;
+}
+
+/* ============================================= */
+/* 5. Tombol Hamburger & Overlay Mobile          */
+/* ============================================= */
+.menu-toggle-button {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text-color-light);
+  cursor: pointer;
+  z-index: 1011;
+  padding: 5px;
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--overlay-dark);
+  z-index: 1000;
+  display: none;
+}
+
+/* ============================================= */
+/* 6. Aturan Responsive (Media Query)            */
+/* ============================================= */
+@media (max-width: 768px) {
+  .App-header {
+    padding: 0 15px;
+  }
+  .menu-toggle-button {
+    display: flex;
+    align-items: center;
+  }
+
+  /* Panel Navigasi Mobile yang slide-in */
+  .nav {
+    position: fixed;
+    top: 0;
+    right: -290px;
+    width: 290px;
+    height: 100vh;
+    background-color: var(--primary-color-dark);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 80px 0 20px 0;
+    box-shadow: -3px 0 10px rgba(0, 0, 0, 0.25);
+    transition: right 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+    z-index: 1005;
+    display: flex;
+  }
+  .nav-open {
+    right: 0;
+  }
+
+  /* Styling link dan tombol di dalam panel mobile */
+  .nav-links {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: 0;
+  }
+  .nav-links li {
+    width: 100%;
+  }
+
+  /* Link Navigasi Biasa di Mobile */
+  .nav-links .nav-link {
+    width: 100%;
+    border-radius: 0;
+    justify-content: flex-start;
+    padding: 16px 30px;
+    box-sizing: border-box;
+  }
+  .nav-links .nav-link:hover {
+    background-color: var(--hover-alpha-light);
+  }
+  .nav-links .nav-link.active {
+    background-color: var(--hover-alpha-light);
+    font-weight: 700;
+  }
+
+  /* Menyesuaikan tampilan komponen Button agar selaras di menu mobile */
+  .nav-item-button {
+    padding: 0;
+  }
+
+  .nav-item-button .btn {
+    width: 100%;
+    border-radius: 0;
+    justify-content: flex-start;
+    padding: 16px 30px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    box-shadow: none;
+    transform: none;
+    border: none;
+    background: none;
+  }
+
+  /* Samakan tombol sekunder ("Masuk") dengan link biasa */
+  .nav-item-button .btn.secondary-on-dark,
+  .nav-item-button .btn.secondary {
+    color: var(--text-color-light);
+  }
+  .nav-item-button .btn.secondary-on-dark:hover,
+  .nav-item-button .btn.secondary:hover {
+    background-color: var(--hover-alpha-light);
+  }
+
+  /* Buat tombol primer ("Daftar") tetap menonjol tapi dengan gaya menu */
+  .nav-item-button .btn.primary {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+  }
+  .nav-item-button .btn.primary:hover {
+    background-color: var(--accent-color-dark);
+  }
+
+  /* Dropdown di mobile */
+  .dropdown {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .dropdown-button {
+    width: 100%;
+    padding: 16px 30px;
+    border-radius: 0;
+    justify-content: flex-start;
+  }
+  .dropdown-content {
+    position: static;
+    background-color: var(--primary-color); /* disamakan dengan header */
+    box-shadow: none;
+    border-radius: 0;
+    width: 100%;
+  }
+
+  .nav-open + .overlay {
+    display: block;
+  }
+}

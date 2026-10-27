@@ -1,0 +1,112 @@
+/* src/layouts/AdminLayout.css (KODE LENGKAP FINAL) */
+
+.admin-layout {
+  display: flex;
+  background-color: #f4f7f6;
+  min-height: 100vh;
+}
+
+.admin-content {
+  flex-grow: 1;
+  margin-left: 260px;
+  padding: 2rem;
+  width: calc(100% - 260px);
+  transition: margin-left 0.3s ease-in-out;
+}
+
+/* ================================================ */
+/* === GAYA BARU DAN PERBAIKAN Z-INDEX === */
+/* ================================================ */
+
+/* Tombol Toggle yang sekarang mandiri */
+.sidebar-toggle-btn {
+  display: none; /* Sembunyi di desktop */
+  position: fixed; /* Kembali menggunakan fixed agar bisa melayang */
+  top: 10px;
+  left: 15px;
+  z-index: 2001; /* z-index paling tinggi agar tombol selalu di atas sidebar */
+  background-color: #374151;
+  color: #e5e7eb;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.2s, transform 0.2s;
+  align-items: center;
+  justify-content: center;
+}
+.sidebar-toggle-btn:hover {
+  background-color: #4b5563;
+}
+.sidebar-toggle-btn.active {
+  /* Jika perlu gaya saat aktif */
+  transform: rotate(180deg);
+}
+
+/* Header Bar KHUSUS MOBILE */
+.mobile-header {
+  display: none;
+  align-items: center;
+  background-color: #111827;
+  color: #f3f4f6;
+  /* Beri padding kiri agar judul tidak tertutup tombol toggle */
+  padding: 0 15px 0 65px;
+  height: 60px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1500;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.mobile-header-title {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+/* Ganti/tambahkan ini di file CSS utama Anda */
+
+/* Wrapper untuk seluruh layout admin */
+.admin-layout {
+  display: flex;
+}
+
+/* Sidebar dengan lebar tetap dan posisi fixed */
+.sidebar {
+  width: 260px; /* Atur lebar sidebar sesuai keinginan */
+  height: 100vh; /* Tinggi selalu 100% dari layar */
+  position: fixed; /* Kunci agar sidebar tetap di tempat */
+  top: 0;
+  left: 0;
+  background-color: #111827; /* Warna gelap sidebar */
+  z-index: 100; /* Pastikan di atas konten tapi di bawah modal */
+}
+
+/* Pembungkus konten utama */
+.main-content-wrapper {
+  /* Beri margin kiri seukuran lebar sidebar */
+  margin-left: 260px;
+  /* Lebar mengisi sisa ruang */
+  width: calc(100% - 260px);
+  padding: 2rem; /* Jarak konten dari tepi */
+  box-sizing: border-box; /* Pastikan padding tidak menambah lebar */
+}
+/* ATURAN RESPONSIVE */
+@media (max-width: 992px) {
+  /* Tampilkan header dan tombol toggle */
+  .mobile-header,
+  .sidebar-toggle-btn {
+    display: flex;
+  }
+
+  /* Sesuaikan konten utama */
+  .admin-content {
+    margin-left: 0;
+    width: 100%;
+    padding: 84px 1rem 2rem 1rem; /* atas(60+24), kanan, bawah, kiri */
+  }
+}

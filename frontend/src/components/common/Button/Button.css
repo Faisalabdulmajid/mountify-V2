@@ -1,0 +1,93 @@
+/*
+ * File: Button.css
+ * Deskripsi: Berisi semua gaya untuk komponen Button yang dapat digunakan kembali.
+*/
+
+/* Gaya dasar untuk semua tombol */
+.btn {
+  padding: 12px 28px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+/* Varian Tombol Primer (CTA Utama) - DIREVISI MENJADI HIJAU */
+/* Varian Tombol Primer (CTA Utama) - FINAL: Putih Solid */
+.btn.primary {
+  /* Diubah menjadi latar belakang PUTIH */
+  background-color: var(--text-color-light, #ffffff);
+  border-color: var(--text-color-light, #ffffff);
+  /* Diubah menjadi warna teks BIRU TUA (mengikuti warna header) */
+  color: var(--primary-color, #142640);
+  font-weight: 700; /* Sedikit pertebal font agar lebih menonjol */
+}
+
+.btn.primary:hover {
+  /* Saat hover, latar sedikit digelapkan agar ada feedback */
+  background-color: #f0f0f0;
+  border-color: #f0f0f0;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* REVISI KUNCI: Varian Tombol Sekunder (Outline) - Dibuat untuk Latar TERANG */
+.btn.secondary {
+  background-color: transparent;
+  /* Menggunakan warna gelap untuk border dan teks agar kontras di background putih */
+  border-color: var(--primary-color, #142640);
+  color: var(--primary-color, #142640);
+}
+
+.btn.secondary:hover {
+  background-color: var(--primary-color, #142640);
+  color: white; /* Teks menjadi putih saat background diisi */
+}
+
+/* Varian Tombol Sekunder Khusus untuk Latar GELAP */
+.btn.secondary-on-dark {
+  background-color: transparent;
+  border-color: rgba(255, 255, 255, 0.7); /* Border putih semi-transparan */
+  color: var(--text-color-light, #ffffff);
+}
+
+.btn.secondary-on-dark:hover {
+  background-color: var(--hover-alpha-light, rgba(255, 255, 255, 0.1));
+  border-color: var(
+    --text-color-light,
+    #ffffff
+  ); /* Border menjadi solid saat hover */
+}
+
+.btn.accent {
+  /* Latar belakang diubah menjadi biru tua, sama seperti header */
+  background-color: var(--primary-color, #142640);
+  /* Garis tepi diubah menjadi warna aksen oranye */
+  border-color: var(--accent-color, #f58554);
+  /* Teks tetap putih agar kontras */
+  color: var(--text-color-light, #ffffff);
+  font-weight: 700;
+}
+
+.btn.accent:hover {
+  /* Saat hover, latar belakang berubah menjadi oranye tua */
+  background-color: var(--accent-color-dark, #e07041);
+  border-color: var(--accent-color-dark, #e07041);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(245, 133, 84, 0.2);
+}
+
+/* Status Disabled */
+.btn:disabled {
+  background-color: #ccc;
+  border-color: #ccc;
+  color: #666;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}

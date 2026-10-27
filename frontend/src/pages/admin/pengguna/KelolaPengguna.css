@@ -1,0 +1,274 @@
+.user-management-page {
+  background-color: transparent;
+  /* TAMBAHKAN BARIS INI untuk memberi jarak dari atas */
+  padding-top: 1.5rem;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.page-header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  color: #1e293b;
+}
+
+.btn-add-new {
+  background-color: #006400;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 15px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.2s;
+}
+.btn-add-new:hover {
+  background-color: #004d00;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.search-container {
+  position: relative;
+  width: 40%;
+}
+.search-container i {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  color: #9ca3af;
+}
+.search-container input {
+  width: 100%;
+  padding: 10px 10px 10px 35px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.toolbar select {
+  padding: 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background-color: white;
+  font-size: 0.9rem;
+}
+
+/* Tabel Data - Konsisten dengan KelolaGunung & KelolaJalur */
+.table-container {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  overflow-x: auto;
+  border: 1px solid #e5e7eb;
+}
+
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.user-table th,
+.user-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #f3f4f6;
+  white-space: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: middle;
+}
+
+.user-table th {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #475569;
+  font-weight: 600;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.user-table tbody tr {
+  transition: all 0.2s ease;
+}
+
+.user-table tbody tr:hover {
+  background-color: #f8fafc;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.user-info-cell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.user-avatar.user-avatar-default {
+  background: #e0e7ef;
+  color: #64748b;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.user-name {
+  font-weight: 600;
+  color: #111827;
+}
+.user-email {
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+.status-badge {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+.status-badge.status-aktif {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+.status-badge.status-nonaktif,
+.status-badge.status-non-aktif,
+.status-badge.status-tidak-aktif {
+  background-color: #fee2e2;
+  color: #d32f2f;
+  border: 1px solid #ef9a9a;
+}
+
+/* === TABLE STYLING - KONSISTEN DENGAN KELOLAJALUR === */
+/* Header dengan sorting capability */
+.header-cell-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  user-select: none;
+}
+
+.sort-icon-active {
+  color: #475569;
+  font-size: 0.7rem;
+  opacity: 0.8;
+}
+
+/* Style Tombol Aksi - Simple & Unified */
+
+/* Konsisten dengan KelolaGunung: tombol aksi selalu center dan align middle, min-height 40px */
+.data-table .col-aksi,
+.data-table th.col-aksi {
+  text-align: center !important;
+  vertical-align: middle !important;
+  height: 100%;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+.data-table .col-aksi {
+  height: 100%;
+}
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.375rem;
+  height: 100%;
+  min-height: 40px;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.data-table td.col-aksi > .action-buttons {
+  height: 100%;
+}
+
+.action-btn {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #ffffff;
+  color: #6b7280;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+
+.action-btn:hover {
+  border-color: #9ca3af;
+  background-color: #f9fafb;
+}
+
+.btn-edit {
+  color: #f59e0b;
+  border-color: #f59e0b;
+  background-color: #fffbeb;
+}
+.btn-edit:hover {
+  color: #fff;
+  background-color: #f59e0b;
+  border-color: #f59e0b;
+}
+
+.btn-delete {
+  color: #ef4444;
+  border-color: #ef4444;
+  background-color: #fef2f2;
+}
+.btn-delete:hover {
+  color: #fff;
+  background-color: #ef4444;
+  border-color: #ef4444;
+}
+
+@media (max-width: 600px) {
+  .user-table th,
+  .user-table td {
+    font-size: 0.85rem;
+    padding: 8px 6px;
+  }
+  .toolbar {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+  }
+  .search-container {
+    width: 100%;
+  }
+  .table-container {
+    padding: 0;
+  }
+}
+
+/* === LEGACY STYLES === */

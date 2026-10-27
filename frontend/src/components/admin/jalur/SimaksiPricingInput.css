@@ -1,0 +1,280 @@
+/* src/components/admin/jalur/SimaksiPricingInput.css */
+
+.simaksi-pricing-input {
+  margin-bottom: 1rem;
+}
+
+/* Category Tabs */
+.category-tabs {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.category-tab {
+  border: 2px solid #dee2e6;
+  background: white;
+  color: #495057;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  transition: all 0.3s ease;
+  flex: 1;
+  min-width: 150px;
+}
+
+.category-tab:hover {
+  border-color: #0d6efd;
+  background-color: #f8f9fa;
+  transform: translateY(-1px);
+}
+
+.category-tab.active {
+  border-color: #0d6efd;
+  background-color: #0d6efd;
+  color: white;
+  box-shadow: 0 4px 12px rgba(13, 110, 253, 0.3);
+}
+
+.category-tab i {
+  font-size: 1.1em;
+}
+
+/* Category Content */
+.category-content {
+  animation: fadeInUp 0.3s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Day Type Cards */
+.day-type-card {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 1rem;
+  height: 100%;
+  transition: all 0.3s ease;
+}
+
+.day-type-card.weekdays {
+  border-left: 4px solid #28a745;
+}
+
+.day-type-card.weekend {
+  border-left: 4px solid #fd7e14;
+}
+
+.day-type-card:hover {
+  background: #e9ecef;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.day-type-card .form-label {
+  font-weight: 600;
+  color: #495057;
+  margin-bottom: 0.75rem;
+}
+
+.day-type-card .input-group-text {
+  background: white;
+  border-color: #ced4da;
+  color: #495057;
+  font-weight: 500;
+}
+
+.day-type-card input.form-control {
+  border-color: #ced4da;
+  font-size: 1.1em;
+  font-weight: 500;
+}
+
+.day-type-card input.form-control:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}
+
+/* Compact Mode */
+.simaksi-pricing-compact .compact-card {
+  border: 1px solid #dee2e6;
+  transition: all 0.3s ease;
+}
+
+.simaksi-pricing-compact .compact-card:hover {
+  border-color: #0d6efd;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.simaksi-pricing-compact .form-control-sm {
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+/* Alert Styling */
+.alert-sm {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+}
+
+/* Card Enhancements */
+.card-header {
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  border-bottom: 2px solid #dee2e6;
+}
+
+.card-header h6 {
+  color: #495057;
+  font-weight: 600;
+}
+
+/* Form Switch Styling */
+.form-check-input:checked {
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+.form-check-label {
+  font-weight: 500;
+  color: #495057;
+}
+
+/* Summary Table */
+.table th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  color: #495057;
+  border-top: none;
+}
+
+.table td {
+  vertical-align: middle;
+  font-weight: 500;
+}
+
+/* Badge Styling */
+.badge.bg-info {
+  background-color: #0dcaf0 !important;
+  color: #000;
+  font-weight: 500;
+}
+
+/* Input Group Enhancements */
+.input-group-text {
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .category-tabs {
+    flex-direction: column;
+  }
+  
+  .category-tab {
+    min-width: auto;
+    text-align: center;
+  }
+  
+  .day-type-card {
+    margin-bottom: 1rem;
+  }
+  
+  .simaksi-pricing-compact .col-4 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 0.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .category-tab {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+  }
+  
+  .day-type-card {
+    padding: 0.75rem;
+  }
+  
+  .card-body {
+    padding: 1rem;
+  }
+}
+
+/* Loading States */
+.form-control:disabled {
+  background-color: #e9ecef;
+  opacity: 0.6;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Hover Effects */
+.card:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+/* Success States */
+.input-group:focus-within .input-group-text {
+  border-color: #0d6efd;
+  background: linear-gradient(135deg, #cfe2ff, #b6d7ff);
+}
+
+/* Error States */
+.is-invalid .input-group-text {
+  border-color: #dc3545;
+  background: linear-gradient(135deg, #f8d7da, #f1aeb5);
+}
+
+/* Animation for Value Changes */
+.form-control.value-changed {
+  animation: valueHighlight 0.5s ease;
+}
+
+@keyframes valueHighlight {
+  0% { background-color: #d1ecf1; }
+  100% { background-color: white; }
+}
+
+/* Pricing Range Info */
+.pricing-range-info {
+  background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+  border-radius: 8px;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.pricing-range-info .badge {
+  font-size: 0.875rem;
+  padding: 0.5rem 0.75rem;
+}
+
+/* Help Text Styling */
+.text-muted {
+  font-size: 0.875rem;
+  font-style: italic;
+}
+
+/* Icon Styling */
+.bi {
+  font-size: inherit;
+}
+
+/* Special styling for currency display */
+.currency-display {
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+  color: #28a745;
+}

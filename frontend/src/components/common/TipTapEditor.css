@@ -1,0 +1,63 @@
+/* Styling untuk container, menubar, dan area tulis TipTap */
+.tiptap-container {
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.tiptap-menubar {
+  background-color: #f3f4f6;
+  padding: 0.5rem;
+  border-bottom: 1px solid #d1d5db;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
+.tiptap-menubar button {
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.tiptap-menubar button:hover {
+  background-color: #e5e7eb;
+}
+
+.tiptap-menubar button.is-active {
+  background-color: #3b82f6;
+  color: white;
+}
+
+/* Styling untuk area penulisan (seperti MS Word/Google Docs) */
+.tiptap-prose {
+  padding: 1rem;
+  min-height: 400px;
+  line-height: 1.6;
+  outline: none;
+}
+
+.tiptap-prose > p.is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  float: left;
+  color: #adb5bd;
+  pointer-events: none;
+  height: 0;
+}
+
+.tiptap-prose h1,
+.tiptap-prose h2,
+.tiptap-prose h3 {
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  line-height: 1.2;
+}
+
+.tiptap-prose ul,
+.tiptap-prose ol {
+  padding-left: 1.5rem;
+}

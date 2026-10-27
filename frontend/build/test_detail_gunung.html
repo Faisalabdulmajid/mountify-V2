@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Detail Gunung</title>
+</head>
+<body>
+    <h1>Test Detail Gunung Sumbing</h1>
+    <div id="loading">Loading...</div>
+    <div id="result"></div>
+
+    <script>
+        // Test langsung API call
+        fetch('http://localhost:5000/api/gunung/65')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('loading').style.display = 'none';
+                
+                console.log('Data dari API:', data);
+                console.log('Jalur pendakian:', data.jalur_pendakian);
+                
+                const resultDiv = document.getElementById('result');
+                resultDiv.innerHTML = `
+                    <h2>${data.nama_gunung}</h2>
+                    <p><strong>Ketinggian:</strong> ${data.ketinggian_puncak_mdpl} mdpl</p>
+                    <p><strong>Jumlah jalur pendakian:</strong> ${data.jalur_pendakian ? data.jalur_pendakian.length : 0}</p>
+                    
+                    <h3>Jalur Pendakian:</h3>
+                    ${data.jalur_pendakian && data.jalur_pendakian.length > 0 ? 
+                        data.jalur_pendakian.map(jalur => `
+                            <div style="border: 1px solid #ccc; margin: 10px 0; padding: 10px;">
+                                <h4>${jalur.nama_jalur}</h4>
+                                <p>Kesulitan: ${jalur.kesulitan_skala}/10</p>
+                                <p>Estimasi waktu: ${jalur.estimasi_waktu_jam} jam</p>
+                                <p>Status: ${jalur.status_jalur}</p>
+                                <p>Biaya Simaksi: Rp ${jalur.biaya_simaksi ? jalur.biaya_simaksi.toLocaleString() : '-'}</p>
+                                <p>Biaya PP: Rp ${jalur.biaya_pulang_pergi ? jalur.biaya_pulang_pergi.toLocaleString() : '-'}</p>
+                            </div>
+                        `).join('') 
+                        : '<p>Tidak ada data jalur pendakian</p>'
+                    }
+                `;
+            })
+            .catch(error => {
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('result').innerHTML = `<p style="color: red;">Error: ${error.message}</p>`;
+                console.error('Error:', error);
+            });
+    </script>
+</body>
+</html>

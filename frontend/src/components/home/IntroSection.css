@@ -1,0 +1,126 @@
+/*
+ * File: IntroSection.css
+ * Deskripsi: Berisi gaya profesional KHUSUS untuk komponen IntroSection.
+*/
+
+.intro-section {
+  /* Penting: position relative agar wave separator bisa diposisikan dengan benar */
+  position: relative;
+
+  /* Gambar latar dengan lapisan gelap untuk meningkatkan kontras teks */
+  background-image: linear-gradient(rgba(1, 12, 31, 0.6), rgba(1, 12, 31, 0.6)),
+    /* CATATAN: Pastikan path gambar ini benar sesuai struktur folder Anda */
+      url("../../assets/img/mount-merapi.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Memberi efek parallax sederhana */
+
+  color: white;
+  min-height: 90vh; /* Tinggi minimal section agar memenuhi layar */
+  padding: 100px 20px;
+
+  /* Menggunakan flexbox untuk menengahkan konten secara vertikal dan horizontal */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* Styling untuk Judul Utama */
+.intro-section h2 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  max-width: 600px;
+  /* Shadow pada teks agar tetap terbaca di atas gambar yang ramai */
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+/* Styling untuk Paragraf Deskripsi */
+.intro-section p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  max-width: 550px;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Styling untuk Tombol Aksi Utama (CTA) */
+.intro-cta-button {
+  padding: 14px 32px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+
+  /* Menggunakan variabel warna dari tema untuk konsistensi */
+  background-color: var(--accent-color, #f58554);
+  color: var(--primary-color, #142640);
+  border: 2px solid var(--accent-color, #f58554);
+}
+
+.intro-cta-button:hover {
+  background-color: var(--accent-color-dark, #e07041);
+  border-color: var(--accent-color-dark, #e07041);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.intro-section::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  /* SVG siluet gunung dengan warna fill yang cocok (#F7F7F9) */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23F7F7F9' fill-opacity='1' d='M0,224L60,202.7C120,181,240,139,360,138.7C480,139,600,181,720,197.3C840,213,960,203,1080,186.7C1200,171,1320,149,1380,138.7L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+@media (max-width: 768px) {
+  .intro-section h2 {
+    font-size: 1.6rem;
+  }
+  .intro-section p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .intro-section h2 {
+    font-size: 1.2rem;
+  }
+  .intro-section p {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .intro-section {
+    padding: 40px 4px;
+  }
+  .intro-section h2 {
+    font-size: 0.75rem;
+    max-width: 98vw;
+    margin-bottom: 8px;
+  }
+  .intro-section p {
+    font-size: 0.6rem;
+    max-width: 96vw;
+    margin-bottom: 16px;
+  }
+  .intro-cta-button {
+    font-size: 0.7rem;
+    padding: 7px 10px;
+    border-radius: 6px;
+  }
+}

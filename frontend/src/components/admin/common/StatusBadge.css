@@ -1,0 +1,71 @@
+/* StatusBadge.css - Consistent badge styling */
+
+.status-badge {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  white-space: nowrap;
+  border: 1px solid #e5e7eb;
+  background-color: #f8fafc;
+  color: #475569;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Status variations */
+.status-badge.status-open {
+  border-color: #d1fae5;
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.status-badge.status-closed {
+  border-color: #fee2e2;
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+.status-badge.status-temporary {
+  border-color: #fef3c7;
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.status-badge.status-neutral {
+  border-color: #d1d5db;
+  background-color: #f8fafc;
+  color: #64748b;
+}
+
+/* Difficulty variations */
+.status-badge.difficulty-easy {
+  border-color: #d1fae5;
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.status-badge.difficulty-medium {
+  border-color: #fef3c7;
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.status-badge.difficulty-hard {
+  border-color: #fee2e2;
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+/* Variants for different contexts */
+.status-badge.compact {
+  padding: 2px 6px;
+  font-size: 0.6875rem;
+}
+
+.status-badge.large {
+  padding: 6px 12px;
+  font-size: 0.875rem;
+}

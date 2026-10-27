@@ -1,0 +1,33 @@
+/* src/components/common/Spinner/Spinner.css */
+
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Atur tinggi agar spinner berada di tengah halaman, sesuaikan jika perlu */
+  min-height: 50vh;
+}
+
+/* Membuat animasi berputar menggunakan @keyframes */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner {
+  /* Ukuran spinner */
+  width: 50px;
+  height: 50px;
+
+  /* Gaya border untuk menciptakan efek lingkaran */
+  border: 6px solid rgba(0, 0, 0, 0.1); /* Warna dasar lingkaran (abu-abu transparan) */
+  border-left-color: #006400; /* Warna bagian yang berputar (hijau tua) */
+  border-radius: 50%; /* Membuatnya menjadi lingkaran sempurna */
+
+  /* Menerapkan animasi */
+  animation: spin 1s linear infinite; /* Nama animasi, durasi, kecepatan, dan pengulangan */
+}

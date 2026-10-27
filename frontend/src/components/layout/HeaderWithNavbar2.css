@@ -1,0 +1,260 @@
+/* HeaderWithNavbar2.css - Menerapkan Palet 1: Hutan Pinus */
+/* Juga mencakup efek header transparan saat scroll */
+
+:root {
+  /* -- Palet Warna "Hutan Pinus" -- */
+  --primary-color: #16372c;
+  --primary-color-dark: #10251e;
+  --accent-color: #e29a26;
+  --accent-color-dark: #c98a22;
+  --text-color-light: #f4f5f3;
+  --text-color-dark: #1f1f1f;
+  --background-light: #f4f5f3;
+  --border-color: rgba(244, 245, 243, 0.5);
+  --overlay-dark: rgba(0, 0, 0, 0.6);
+  --hover-alpha-dark: rgba(0, 0, 0, 0.1);
+  --hover-alpha-light: rgba(255, 255, 255, 0.1);
+}
+
+.App-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* Default: Transparan untuk efek scroll */
+  background-color: transparent;
+  color: var(--text-color-light);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  z-index: 1010;
+  /* Default: Tanpa shadow & ada transisi */
+  box-shadow: none;
+  padding: 0 25px;
+  box-sizing: border-box;
+  transition: background-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Gaya BARU saat header di-scroll */
+.App-header.scrolled {
+  background-color: var(--primary-color);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.logo-container,
+.title-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--text-color-light);
+}
+
+.App-logo {
+  height: 38px;
+  margin-right: 12px;
+}
+
+.title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  padding: 0;
+  margin: 0;
+}
+
+/* --- Gaya Umum untuk SEMUA item di navigasi --- */
+.nav-links .nav-link,
+.nav-links .nav-button-link,
+.nav-links .nav-button-link-register {
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 6px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  font-family: inherit;
+}
+
+/* --- 1. Gaya untuk LINK NAVIGASI BIASA (Home, Tentang, dll) --- */
+.nav-links .nav-link {
+  background: none;
+  border: 1px solid transparent;
+  color: var(--text-color-light);
+}
+.nav-links .nav-link:hover {
+  background-color: var(--hover-alpha-light);
+  color: var(--text-color-light);
+}
+.nav-links .nav-link.active {
+  color: var(--accent-color);
+  font-weight: 700;
+}
+
+/* --- 2. Gaya untuk TOMBOL SEKUNDER (Masuk) --- */
+.nav-links .nav-button-link {
+  background: none;
+  border: 1px solid var(--border-color);
+  color: var(--text-color-light);
+}
+.nav-links .nav-button-link:hover {
+  background-color: var(--hover-alpha-light);
+  border-color: var(--text-color-light);
+}
+
+/* --- 3. Gaya untuk TOMBOL PRIMER (Daftar) --- */
+.nav-links .nav-button-link-register {
+  background-color: var(--accent-color);
+  border: 1px solid var(--accent-color);
+  color: var(
+    --text-color-dark
+  ); /* Teks gelap agar kontras dengan kuning amber */
+  font-weight: 700;
+}
+.nav-links .nav-button-link-register:hover {
+  background-color: var(--accent-color-dark);
+  border-color: var(--accent-color-dark);
+  color: var(--text-color-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ... Sisa kode CSS lainnya sama persis ... */
+
+.menu-toggle-button {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text-color-light);
+  cursor: pointer;
+  z-index: 1011;
+  padding: 5px;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--overlay-dark);
+  z-index: 1000;
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .App-header {
+    padding: 0 15px;
+  }
+
+  .menu-toggle-button {
+    display: flex;
+    align-items: center;
+  }
+
+  .nav {
+    position: fixed;
+    top: 0;
+    right: -290px;
+    width: 290px;
+    height: 100vh;
+    background-color: var(--primary-color-dark);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 80px 0 20px 0;
+    box-shadow: -3px 0 10px rgba(0, 0, 0, 0.25);
+    transition: right 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+    z-index: 1005;
+    display: flex;
+  }
+
+  .nav-open {
+    right: 0;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: 0;
+  }
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-links li.nav-item-button {
+    padding: 10px 20px;
+  }
+
+  .nav-links .nav-link,
+  .nav-links .nav-button-link,
+  .nav-links .nav-button-link-register {
+    width: 100%;
+    border: none;
+    border-radius: 0;
+    justify-content: flex-start;
+    padding: 16px 30px;
+    box-sizing: border-box;
+  }
+
+  .nav-links .nav-link,
+  .nav-links .nav-button-link {
+    background: none;
+    color: var(--text-color-light);
+  }
+  .nav-links .nav-link:hover,
+  .nav-links .nav-button-link:hover {
+    background-color: var(--hover-alpha-light);
+  }
+  .nav-links .nav-link.active {
+    background-color: var(--hover-alpha-light);
+    font-weight: 700;
+  }
+
+  .nav-links .nav-button-link-register {
+    margin: 10px 20px;
+    width: calc(100% - 40px);
+    justify-content: center;
+    border-radius: 6px;
+    background-color: var(--accent-color);
+    color: var(--text-color-dark);
+  }
+  .nav-links .nav-button-link-register:hover {
+    background-color: var(--accent-color-dark);
+  }
+
+  .dropdown {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .dropdown-button {
+    width: 100%;
+    padding: 16px 30px;
+    border-radius: 0;
+    justify-content: flex-start;
+  }
+  .dropdown-content {
+    position: static;
+    background-color: var(--hover-alpha-dark);
+  }
+
+  .nav-open + .overlay {
+    display: block;
+  }
+}
